@@ -1,0 +1,45 @@
+version: "3"
+
+services:
+  db: #database.ymlのhostと同じにする必要がある
+    container_name: database
+    image: mysql:8.0
+    command: ["--character-set-server=utf8mb4",  "--collation-server=utf8mb4_unicode_ci", "--default-authentication-plugin=mysql_native_password"]
+    environment:
+      MYSQL_ROOT_PASSWORD:
+      MYSQL_DATABASE: api_development
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      TZ: Asia/Tokyo
+    ports:
+      - 3308:3306
+    volumes:
+      - ./back/database/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./back/database/data:/var/lib/mysql
+      - ./back/database/sql:/docker-entrypoint-initdb.d
+
+  api:
+    container_name: api
+    tty: true
+    depends_on:
+      - db
+    build:
+      context: back/
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - ./back:/app
+    command: rails server -b 0.0.0.0
+
+  front:
+    build:
+      context: front/
+      dockerfile: Dockerfile
+    container_name: web
+    volumes:
+      - ./front/app:/usr/src/app
+    command: 'yarn dev'
+    ports:
+      - "4001:3000"
