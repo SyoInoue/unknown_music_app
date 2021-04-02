@@ -640,3 +640,326 @@ Processing by Rails::InfoController#routes as HTML
 Completed 200 OK in 34ms (Views: 31.7ms | ActiveRecord: 0.0ms | Allocations: 8584)
 
 
+  [1m[35m (35.7ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (28.7ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT GET_LOCK('5878493172211724820', 0)[0m
+  [1m[35m (15.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to DeviseTokenAuthCreateUsers (20210402150736)
+  [1m[35m (41.7ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `provider` varchar(255) DEFAULT 'email' NOT NULL, `uid` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `allow_password_change` tinyint(1) DEFAULT FALSE, `remember_created_at` datetime, `sign_in_count` int DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `confirmation_token` varchar(255), `confirmed_at` datetime, `confirmation_sent_at` datetime, `unconfirmed_email` varchar(255), `name` varchar(255), `nickname` varchar(255), `image` varchar(255), `email` varchar(255), `tokens` text, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (26.2ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [1m[35m (25.9ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_uid_and_provider` ON `users` (`uid`, `provider`)[0m
+  [1m[35m (25.0ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)[0m
+  [1m[35m (25.6ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_confirmation_token` ON `users` (`confirmation_token`)[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210402150736')[0m
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.3ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2021-04-02 15:13:13.878644', '2021-04-02 15:13:13.878644')[0m
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('5878493172211724820')[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 172.24.0.1 at 2021-04-03 00:14:29 +0900
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 15.0ms | Allocations: 464)
+Completed 200 OK in 114ms (Views: 47.6ms | ActiveRecord: 0.0ms | Allocations: 3952)
+
+
+Started GET "/favicon.ico" for 172.24.0.1 at 2021-04-03 00:14:30 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/rails/info/routes" for 172.24.0.1 at 2021-04-03 00:14:36 +0900
+Processing by Rails::InfoController#routes as HTML
+  Rendering layout /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/layouts/application.html.erb
+  Rendering /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/local/bundle/gems/actionpack-6.1.3.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [40 times] (Duration: 9.9ms | Allocations: 6034)
+  Rendered /usr/local/bundle/gems/actionpack-6.1.3.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 1.1ms | Allocations: 687)
+  Rendered /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 18.5ms | Allocations: 9745)
+  Rendered layout /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/layouts/application.html.erb (Duration: 21.0ms | Allocations: 9972)
+Completed 200 OK in 26ms (Views: 24.7ms | ActiveRecord: 0.0ms | Allocations: 11080)
+
+
+Started POST "/auth" for 172.24.0.1 at 2021-04-03 00:22:34 +0900
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"name"=>"user1", "nickname"=>"user1", "email"=>"example@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"name"=>"user1", "nickname"=>"user1", "email"=>"example@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'example@example.com' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `email`, `created_at`, `updated_at`) VALUES ('example@example.com', '$2a$12$HPTm5JSOYFzJmmz29Z7Ht.hnZdPzr.fkSND99V0v2dnpE67sWriOS', 'example@example.com', '2021-04-02 15:22:34.655784', '2021-04-02 15:22:34.655784')[0m
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"uHpb6RYpWWU1J8NYy1n8Rw\":{\"token\":\"$2a$10$kB8W3Rp6eJsRm8CwoX15oOhoL8QfpncMZ.ZNiY.pQdSPD9WMn4rZm\",\"expiry\":1618586554}}', `users`.`updated_at` = '2021-04-02 15:22:34.712501' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1 FOR UPDATE[0m
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"uHpb6RYpWWU1J8NYy1n8Rw\":{\"token\":\"$2a$10$YPkzU770RHKQSOxPjYu/ZOlk9fw9MUMk3N5xmyzyHJLx0U2.jncsq\",\"expiry\":1618586554,\"last_token\":\"$2a$10$kB8W3Rp6eJsRm8CwoX15oOhoL8QfpncMZ.ZNiY.pQdSPD9WMn4rZm\",\"updated_at\":\"2021-04-02T15:22:34Z\"}}', `users`.`updated_at` = '2021-04-02 15:22:34.832005' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 734ms (Views: 0.6ms | ActiveRecord: 20.6ms | Allocations: 43292)
+
+
+Started POST "/auth/sign_in" for 172.24.0.1 at 2021-04-03 00:27:50 +0900
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"example@example.com", "password"=>"[FILTERED]", "session"=>{"email"=>"example@example.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+DEPRECATION WARNING: connection_config is deprecated and will be removed from Rails 6.2 (Use connection_db_config instead) (called from public_send at /usr/local/bundle/gems/activesupport-6.1.3.1/lib/active_support/core_ext/object/try.rb:15)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (BINARY email = 'example@example.com' AND provider= 'email') ORDER BY `users`.`id` ASC LIMIT 1[0m
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"uHpb6RYpWWU1J8NYy1n8Rw\":{\"token\":\"$2a$10$YPkzU770RHKQSOxPjYu/ZOlk9fw9MUMk3N5xmyzyHJLx0U2.jncsq\",\"expiry\":1618586554,\"last_token\":\"$2a$10$kB8W3Rp6eJsRm8CwoX15oOhoL8QfpncMZ.ZNiY.pQdSPD9WMn4rZm\",\"updated_at\":\"2021-04-02T15:22:34Z\"},\"-NVAx6U-gPfzfWlyQNsDfQ\":{\"token\":\"$2a$10$A26DdMsLv7YcYGVtPHQqjeXUFNDKzJL7UjJDdvpnf74vxYrOEdzTa\",\"expiry\":1618586870}}', `users`.`updated_at` = '2021-04-02 15:27:50.969513' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1 FOR UPDATE[0m
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"uHpb6RYpWWU1J8NYy1n8Rw\":{\"token\":\"$2a$10$YPkzU770RHKQSOxPjYu/ZOlk9fw9MUMk3N5xmyzyHJLx0U2.jncsq\",\"expiry\":1618586554,\"last_token\":\"$2a$10$kB8W3Rp6eJsRm8CwoX15oOhoL8QfpncMZ.ZNiY.pQdSPD9WMn4rZm\",\"updated_at\":\"2021-04-02T15:22:34Z\"},\"-NVAx6U-gPfzfWlyQNsDfQ\":{\"token\":\"$2a$10$tew5676bFXKjZGbXtUh3gu7rjvkMmEND2h/8bSrzw5ePNg5JNa/5G\",\"expiry\":1618586871,\"last_token\":\"$2a$10$A26DdMsLv7YcYGVtPHQqjeXUFNDKzJL7UjJDdvpnf74vxYrOEdzTa\",\"updated_at\":\"2021-04-02T15:27:50Z\"}}', `users`.`updated_at` = '2021-04-02 15:27:51.052380' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 395ms (Views: 0.2ms | ActiveRecord: 11.4ms | Allocations: 9474)
+
+
+Started PUT "/auth/password" for 172.24.0.1 at 2021-04-03 00:34:17 +0900
+Processing by DeviseTokenAuth::PasswordsController#update as */*
+  Parameters: {"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`uid` = 'example@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE `users` SET `users`.`encrypted_password` = '$2a$12$b81rwQMT.9y5iCEAAnADQ.BCAzHVFxuoYLN7FZVakr3rPv/NdUdEC', `users`.`updated_at` = '2021-04-02 15:34:17.606121' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1 FOR UPDATE[0m
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"uHpb6RYpWWU1J8NYy1n8Rw\":{\"token\":\"$2a$10$YPkzU770RHKQSOxPjYu/ZOlk9fw9MUMk3N5xmyzyHJLx0U2.jncsq\",\"expiry\":1618586554,\"last_token\":\"$2a$10$kB8W3Rp6eJsRm8CwoX15oOhoL8QfpncMZ.ZNiY.pQdSPD9WMn4rZm\",\"updated_at\":\"2021-04-02T15:22:34Z\"},\"-NVAx6U-gPfzfWlyQNsDfQ\":{\"token\":\"$2a$10$GFEide922UWePBGOgsFq0.ayD.Mt.81ahR80CqhoqnI/rwOpRwCCi\",\"expiry\":1618587257,\"last_token\":\"$2a$10$tew5676bFXKjZGbXtUh3gu7rjvkMmEND2h/8bSrzw5ePNg5JNa/5G\",\"updated_at\":\"2021-04-02T15:34:17Z\"}}', `users`.`updated_at` = '2021-04-02 15:34:17.679229' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 324ms (Views: 0.3ms | ActiveRecord: 13.4ms | Allocations: 9782)
+
+
+Started GET "/rails/info/routes" for 172.24.0.1 at 2021-04-03 00:37:58 +0900
+Processing by Rails::InfoController#routes as HTML
+  Rendering layout /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/layouts/application.html.erb
+  Rendering /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/local/bundle/gems/actionpack-6.1.3.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [40 times] (Duration: 6.3ms | Allocations: 6035)
+  Rendered /usr/local/bundle/gems/actionpack-6.1.3.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 0.9ms | Allocations: 687)
+  Rendered /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 14.0ms | Allocations: 9787)
+  Rendered layout /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/layouts/application.html.erb (Duration: 17.5ms | Allocations: 10010)
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.0ms | Allocations: 11028)
+
+
+Started GET "/rails/info/routes" for 172.24.0.1 at 2021-04-03 00:38:03 +0900
+Processing by Rails::InfoController#routes as HTML
+  Rendering layout /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/layouts/application.html.erb
+  Rendering /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/local/bundle/gems/actionpack-6.1.3.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [40 times] (Duration: 8.2ms | Allocations: 5802)
+  Rendered /usr/local/bundle/gems/actionpack-6.1.3.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 0.2ms | Allocations: 89)
+  Rendered /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 13.5ms | Allocations: 8534)
+  Rendered layout /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/layouts/application.html.erb (Duration: 15.9ms | Allocations: 8607)
+Completed 200 OK in 18ms (Views: 18.0ms | ActiveRecord: 0.0ms | Allocations: 8948)
+
+
+Started GET "/" for 172.24.0.1 at 2021-04-03 00:50:23 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.0ms | Allocations: 180)
+Completed 200 OK in 10ms (Views: 8.7ms | Allocations: 750)
+
+
+Started GET "/rails/info/routes" for 172.24.0.1 at 2021-04-03 01:28:30 +0900
+Processing by Rails::InfoController#routes as HTML
+  Rendering layout /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/layouts/application.html.erb
+  Rendering /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/local/bundle/gems/actionpack-6.1.3.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [40 times] (Duration: 156.4ms | Allocations: 5804)
+  Rendered /usr/local/bundle/gems/actionpack-6.1.3.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 2.6ms | Allocations: 89)
+  Rendered /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 167.2ms | Allocations: 8541)
+  Rendered layout /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/layouts/application.html.erb (Duration: 169.6ms | Allocations: 8614)
+Completed 200 OK in 181ms (Views: 175.8ms | Allocations: 8953)
+
+
+Started GET "/rails/info/routes" for 172.24.0.1 at 2021-04-03 01:30:56 +0900
+Processing by Rails::InfoController#routes as HTML
+  Rendering layout /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/layouts/application.html.erb
+  Rendering /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/local/bundle/gems/actionpack-6.1.3.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [40 times] (Duration: 9.5ms | Allocations: 5802)
+  Rendered /usr/local/bundle/gems/actionpack-6.1.3.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 0.2ms | Allocations: 89)
+  Rendered /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 14.9ms | Allocations: 8534)
+  Rendered layout /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/layouts/application.html.erb (Duration: 16.8ms | Allocations: 8607)
+Completed 200 OK in 20ms (Views: 19.3ms | Allocations: 8944)
+
+
+Started POST "/api/auth" for 172.24.0.1 at 2021-04-03 01:32:18 +0900
+Processing by Api::Auth::RegistrationsController#create as */*
+  Parameters: {"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>nil, "nickname"=>nil, "email"=>"example@example.com", "registration"=>{"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>nil, "nickname"=>nil, "email"=>"example@example.com"}}
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'example@example.com' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 307ms (Views: 1.1ms | ActiveRecord: 20.3ms | Allocations: 16236)
+
+
+Started POST "/api/auth" for 172.24.0.1 at 2021-04-03 01:33:18 +0900
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "password": "password",
+    "password_confirmation": "password",
+    "name": user1,
+    "nickname": user1,
+    "email": "example@example.com"
+}
+  
+ActionDispatch::Http::Parameters::ParseError (809: unexpected token at '{
+    "password": "password",
+    "password_confirmation": "password",
+    "name": user1,
+    "nickname": user1,
+    "email": "example@example.com"
+}'):
+  
+actionpack (6.1.3.1) lib/action_dispatch/http/parameters.rb:96:in `rescue in parse_formatted_parameters'
+actionpack (6.1.3.1) lib/action_dispatch/http/parameters.rb:92:in `parse_formatted_parameters'
+actionpack (6.1.3.1) lib/action_dispatch/http/request.rb:399:in `block in POST'
+rack (2.2.3) lib/rack/request.rb:69:in `fetch'
+rack (2.2.3) lib/rack/request.rb:69:in `fetch_header'
+actionpack (6.1.3.1) lib/action_dispatch/http/request.rb:398:in `POST'
+actionpack (6.1.3.1) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (6.1.3.1) lib/action_controller/metal/params_wrapper.rb:284:in `_wrapper_enabled?'
+actionpack (6.1.3.1) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+activerecord (6.1.3.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.3.1) lib/abstract_controller/base.rb:165:in `process'
+actionpack (6.1.3.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.3.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.3.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.3.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.3.1) lib/action_dispatch/routing/mapper.rb:19:in `block in <class:Constraints>'
+actionpack (6.1.3.1) lib/action_dispatch/routing/mapper.rb:49:in `serve'
+actionpack (6.1.3.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.3.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.3.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.3.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.3.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+railties (6.1.3.1) lib/rails/engine.rb:539:in `call'
+puma (5.2.2) lib/puma/configuration.rb:248:in `call'
+puma (5.2.2) lib/puma/request.rb:76:in `block in handle_request'
+puma (5.2.2) lib/puma/thread_pool.rb:337:in `with_force_shutdown'
+puma (5.2.2) lib/puma/request.rb:75:in `handle_request'
+puma (5.2.2) lib/puma/server.rb:431:in `process_client'
+puma (5.2.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "password": "password",
+    "password_confirmation": "password",
+    "name": user1,
+    "nickname": user1,
+    "email": "example@example.com"
+}
+Started POST "/api/auth" for 172.24.0.1 at 2021-04-03 01:33:44 +0900
+Processing by Api::Auth::RegistrationsController#create as */*
+  Parameters: {"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"user1", "nickname"=>"user1", "email"=>"example@example.com", "registration"=>{"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"user1", "nickname"=>"user1", "email"=>"example@example.com"}}
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'example@example.com' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 242ms (Views: 0.6ms | ActiveRecord: 1.6ms | Allocations: 4022)
+
+
+Started POST "/api/auth" for 172.24.0.1 at 2021-04-03 01:33:58 +0900
+Processing by Api::Auth::RegistrationsController#create as */*
+  Parameters: {"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"user1", "nickname"=>"user1", "email"=>"example1@example.com", "registration"=>{"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"user1", "nickname"=>"user1", "email"=>"example1@example.com"}}
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'example1@example.com' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (3.2ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `email`, `created_at`, `updated_at`) VALUES ('example1@example.com', '$2a$12$alQUxyNSXj4esJFJXhtVR.lvNkSr2c2pENuBoISn83IxS6LDvicTa', 'example1@example.com', '2021-04-02 16:33:59.204827', '2021-04-02 16:33:59.204827')[0m
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.4ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"XwQ5rKqpt9fEoSytAD69wQ\":{\"token\":\"$2a$10$rSDIPhe1CG2p/BOMRTUyTunWhZb6wI8xXKjH3aDE7BdsQ3fP6qPV6\",\"expiry\":1618590839}}', `users`.`updated_at` = '2021-04-02 16:33:59.287225' WHERE `users`.`id` = 2[0m
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1 FOR UPDATE[0m
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"XwQ5rKqpt9fEoSytAD69wQ\":{\"token\":\"$2a$10$RZ9K.XVbLI/7jBm4LFhgT.zd.zuq0c1Ri4Op1D5om0ZaIQj09fhae\",\"expiry\":1618590839,\"last_token\":\"$2a$10$rSDIPhe1CG2p/BOMRTUyTunWhZb6wI8xXKjH3aDE7BdsQ3fP6qPV6\",\"updated_at\":\"2021-04-02T16:33:59Z\"}}', `users`.`updated_at` = '2021-04-02 16:33:59.371987' WHERE `users`.`id` = 2[0m
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 410ms (Views: 0.5ms | ActiveRecord: 19.0ms | Allocations: 11851)
+
+
+Started POST "/api/auth" for 172.24.0.1 at 2021-04-03 01:47:59 +0900
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::Auth::RegistrationsController#create as */*
+  Parameters: {"name"=>"user2", "email"=>"example2@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "nickname"=>"user2", "registration"=>{"name"=>"user2", "email"=>"example2@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "nickname"=>"user2"}}
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'example2@example.com' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `email`, `created_at`, `updated_at`) VALUES ('example2@example.com', '$2a$12$sAYVRzrZFTsBh/4KThSjP.KPNPqamSbzKsEUSDoYCPRrlkG1pvYem', 'example2@example.com', '2021-04-02 16:47:59.579825', '2021-04-02 16:47:59.579825')[0m
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.1ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"0-ufnHhABDgPjLEorqgp7g\":{\"token\":\"$2a$10$nM9sIWBWJ9hDeW1uOdNo7uoLvdfp2vI7cC91WdF3/PCRLFNUHDilK\",\"expiry\":1618591679}}', `users`.`updated_at` = '2021-04-02 16:47:59.654799' WHERE `users`.`id` = 3[0m
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1 FOR UPDATE[0m
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"0-ufnHhABDgPjLEorqgp7g\":{\"token\":\"$2a$10$aBvzVDTg7ci.N7ZbEoMDB.EE8kQQW8nvc1X/Wsi.0OJCU6idypsVG\",\"expiry\":1618591679,\"last_token\":\"$2a$10$nM9sIWBWJ9hDeW1uOdNo7uoLvdfp2vI7cC91WdF3/PCRLFNUHDilK\",\"updated_at\":\"2021-04-02T16:47:59Z\"}}', `users`.`updated_at` = '2021-04-02 16:47:59.740264' WHERE `users`.`id` = 3[0m
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 447ms (Views: 0.5ms | ActiveRecord: 19.0ms | Allocations: 22685)
+
+
+Started POST "/api/auth" for 172.24.0.1 at 2021-04-03 01:48:42 +0900
+Processing by Api::Auth::RegistrationsController#create as */*
+  Parameters: {"name"=>"ユーザー3", "email"=>"example3@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"name"=>"ユーザー3", "email"=>"example3@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :name, :registration[0m
+[31mUnpermitted parameters: :name, :registration[0m
+[31mUnpermitted parameters: :name, :registration[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'example3@example.com' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `email`, `created_at`, `updated_at`) VALUES ('example3@example.com', '$2a$12$SUwnwWcGUaLEcIDWZIBSructMyHgYfZJWOHC58ojgRbgpiBx.2Lf6', 'example3@example.com', '2021-04-02 16:48:42.667822', '2021-04-02 16:48:42.667822')[0m
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"E4n8z89Ka5MzMRbM6W4vwQ\":{\"token\":\"$2a$10$hKULWLpbz1kvFLI3VCRynuD3oHzDrNUWs1Gko8xEcbQzMDxn7upUe\",\"expiry\":1618591722}}', `users`.`updated_at` = '2021-04-02 16:48:42.731905' WHERE `users`.`id` = 4[0m
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1 FOR UPDATE[0m
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"E4n8z89Ka5MzMRbM6W4vwQ\":{\"token\":\"$2a$10$18HN6.wyopZs3m8siStgVev3yh3yJEKuDFAVOskuacTGSYy5veX7u\",\"expiry\":1618591722,\"last_token\":\"$2a$10$hKULWLpbz1kvFLI3VCRynuD3oHzDrNUWs1Gko8xEcbQzMDxn7upUe\",\"updated_at\":\"2021-04-02T16:48:42Z\"}}', `users`.`updated_at` = '2021-04-02 16:48:42.805712' WHERE `users`.`id` = 4[0m
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 383ms (Views: 0.2ms | ActiveRecord: 16.9ms | Allocations: 11625)
+
+

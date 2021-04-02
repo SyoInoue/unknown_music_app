@@ -6,7 +6,8 @@ ENV LANG=C.UTF-8 \
 WORKDIR /app
 
 RUN apt-get update -qq && \
-  apt-get install -y nodejs default-mysql-client \
+  apt-get install -y \
+  nodejs default-mysql-client \
   build-essential libpq-dev
 
 COPY Gemfile /app/Gemfile
