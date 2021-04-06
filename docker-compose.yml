@@ -33,7 +33,7 @@ services:
       - ./back:/app
     command: rails server -b 0.0.0.0
 
-  front:
+  web:
     build:
       context: front/
       dockerfile: Dockerfile

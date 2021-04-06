@@ -963,3 +963,275 @@ Processing by Api::Auth::RegistrationsController#create as */*
 Completed 200 OK in 383ms (Views: 0.2ms | ActiveRecord: 16.9ms | Allocations: 11625)
 
 
+Started GET "/rails/info/routes" for 172.24.0.1 at 2021-04-05 10:21:32 +0900
+  [1m[35m (10.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::InfoController#routes as HTML
+  Rendering layout /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/layouts/application.html.erb
+  Rendering /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/local/bundle/gems/actionpack-6.1.3.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [40 times] (Duration: 8.9ms | Allocations: 6174)
+  Rendered /usr/local/bundle/gems/actionpack-6.1.3.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 20.2ms | Allocations: 1109)
+  Rendered /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 54.2ms | Allocations: 11352)
+  Rendered layout /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/layouts/application.html.erb (Duration: 56.5ms | Allocations: 11593)
+Completed 200 OK in 152ms (Views: 89.0ms | ActiveRecord: 0.0ms | Allocations: 15454)
+
+
+Started GET "/favicon.ico" for 172.24.0.1 at 2021-04-05 10:21:32 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 172.24.0.1 at 2021-04-05 12:28:55 +0900
+  
+ArgumentError (can't use member outside resource(s) scope):
+  
+config/routes.rb:10:in `block (4 levels) in <main>'
+config/routes.rb:9:in `block (3 levels) in <main>'
+config/routes.rb:4:in `block (2 levels) in <main>'
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/rails/info/routes" for 172.24.0.1 at 2021-04-05 12:28:57 +0900
+Processing by Rails::InfoController#routes as HTML
+  Rendering layout /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/layouts/application.html.erb
+  Rendering /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/local/bundle/gems/actionpack-6.1.3.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [16 times] (Duration: 4.6ms | Allocations: 2555)
+  Rendered /usr/local/bundle/gems/actionpack-6.1.3.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 1.2ms | Allocations: 687)
+  Rendered /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 12.8ms | Allocations: 4801)
+  Rendered layout /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/layouts/application.html.erb (Duration: 17.4ms | Allocations: 5023)
+Completed 200 OK in 24ms (Views: 22.5ms | Allocations: 6029)
+
+
+Started GET "/favicon.ico" for 172.24.0.1 at 2021-04-05 12:28:58 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/rails/info/routes" for 172.24.0.1 at 2021-04-05 12:29:02 +0900
+Processing by Rails::InfoController#routes as HTML
+  Rendering layout /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/layouts/application.html.erb
+  Rendering /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/local/bundle/gems/actionpack-6.1.3.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [16 times] (Duration: 3.7ms | Allocations: 2322)
+  Rendered /usr/local/bundle/gems/actionpack-6.1.3.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 0.2ms | Allocations: 89)
+  Rendered /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 7.5ms | Allocations: 3553)
+  Rendered layout /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/layouts/application.html.erb (Duration: 9.4ms | Allocations: 3627)
+Completed 200 OK in 12ms (Views: 11.6ms | Allocations: 3970)
+
+
+Started GET "/rails/info/routes" for 172.18.0.1 at 2021-04-05 13:36:35 +0900
+  [1m[35m (11.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::InfoController#routes as HTML
+  Rendering layout /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/layouts/application.html.erb
+  Rendering /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/local/bundle/gems/actionpack-6.1.3.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [47 times] (Duration: 26.9ms | Allocations: 7181)
+  Rendered /usr/local/bundle/gems/actionpack-6.1.3.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 52.1ms | Allocations: 1235)
+  Rendered /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 115.7ms | Allocations: 12994)
+  Rendered layout /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/layouts/application.html.erb (Duration: 119.7ms | Allocations: 13245)
+Completed 200 OK in 220ms (Views: 158.2ms | ActiveRecord: 0.0ms | Allocations: 17122)
+
+
+Started GET "/rails/info/routes" for 172.18.0.1 at 2021-04-05 13:36:36 +0900
+Processing by Rails::InfoController#routes as HTML
+  Rendering layout /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/layouts/application.html.erb
+  Rendering /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/local/bundle/gems/actionpack-6.1.3.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [47 times] (Duration: 12.9ms | Allocations: 7042)
+  Rendered /usr/local/bundle/gems/actionpack-6.1.3.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 1.3ms | Allocations: 687)
+  Rendered /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 20.5ms | Allocations: 11259)
+  Rendered layout /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/layouts/application.html.erb (Duration: 22.6ms | Allocations: 11482)
+Completed 200 OK in 26ms (Views: 25.2ms | ActiveRecord: 0.0ms | Allocations: 12493)
+
+
+Started GET "/rails/info/routes" for 172.18.0.1 at 2021-04-05 13:36:36 +0900
+Processing by Rails::InfoController#routes as HTML
+  Rendering layout /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/layouts/application.html.erb
+  Rendering /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/local/bundle/gems/actionpack-6.1.3.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [47 times] (Duration: 22.9ms | Allocations: 6809)
+  Rendered /usr/local/bundle/gems/actionpack-6.1.3.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 0.4ms | Allocations: 89)
+  Rendered /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 28.6ms | Allocations: 10019)
+  Rendered layout /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/layouts/application.html.erb (Duration: 30.5ms | Allocations: 10093)
+Completed 200 OK in 33ms (Views: 32.2ms | ActiveRecord: 0.0ms | Allocations: 10440)
+
+
+Started GET "/api/v1/registered/posts/search?=arctic_monkeys" for 172.18.0.1 at 2021-04-05 13:46:11 +0900
+Processing by Api::V1::Registered::PostsController#search as */*
+Completed 500 Internal Server Error in 7ms (Allocations: 3105)
+
+
+  
+NameError (undefined local variable or method `post' for #<Api::V1::Registered::PostsController:0x0000000001e7d0>
+Did you mean?  posts):
+  
+app/controllers/api/v1/registered/posts_controller.rb:6:in `search'
+Started GET "/api/v1/registered/posts/search?=arctic_monkeys" for 172.18.0.1 at 2021-04-05 13:46:16 +0900
+Processing by Api::V1::Registered::PostsController#search as */*
+Completed 500 Internal Server Error in 5ms (Allocations: 2939)
+
+
+  
+NameError (undefined local variable or method `post' for #<Api::V1::Registered::PostsController:0x0000000001e848>
+Did you mean?  posts):
+  
+app/controllers/api/v1/registered/posts_controller.rb:6:in `search'
+Started GET "/api/v1/registered/posts/search" for 172.18.0.1 at 2021-04-05 13:46:53 +0900
+Processing by Api::V1::Registered::PostsController#search as */*
+Completed 500 Internal Server Error in 5ms (Allocations: 2941)
+
+
+  
+NameError (undefined local variable or method `post' for #<Api::V1::Registered::PostsController:0x0000000001e910>
+Did you mean?  posts):
+  
+app/controllers/api/v1/registered/posts_controller.rb:6:in `search'
+Started GET "/api/v1/registered/posts/search" for 172.18.0.1 at 2021-04-05 13:46:57 +0900
+Processing by Api::V1::Registered::PostsController#search as */*
+Completed 500 Internal Server Error in 5ms (Allocations: 2941)
+
+
+  
+NameError (undefined local variable or method `post' for #<Api::V1::Registered::PostsController:0x0000000001ea00>
+Did you mean?  posts):
+  
+app/controllers/api/v1/registered/posts_controller.rb:6:in `search'
+Started GET "/api/v1/registered/posts/search?=arctic_monkeys" for 172.18.0.1 at 2021-04-05 13:47:11 +0900
+Processing by Api::V1::Registered::PostsController#search as */*
+Completed 500 Internal Server Error in 8ms (Allocations: 2939)
+
+
+  
+NameError (undefined local variable or method `post' for #<Api::V1::Registered::PostsController:0x0000000001eaa0>
+Did you mean?  posts):
+  
+app/controllers/api/v1/registered/posts_controller.rb:6:in `search'
+Started GET "/api/v1/registered/posts/search?=arctic_monkeys" for 172.18.0.1 at 2021-04-05 13:47:12 +0900
+Processing by Api::V1::Registered::PostsController#search as */*
+Completed 500 Internal Server Error in 7ms (Allocations: 2939)
+
+
+  
+NameError (undefined local variable or method `post' for #<Api::V1::Registered::PostsController:0x0000000001eb18>
+Did you mean?  posts):
+  
+app/controllers/api/v1/registered/posts_controller.rb:6:in `search'
+Started GET "/api/v1/registered/posts/search?arctic_monkeys" for 172.18.0.1 at 2021-04-05 13:47:24 +0900
+Processing by Api::V1::Registered::PostsController#search as */*
+  Parameters: {"arctic_monkeys"=>nil}
+Completed 500 Internal Server Error in 8ms (Allocations: 2939)
+
+
+  
+NameError (undefined local variable or method `post' for #<Api::V1::Registered::PostsController:0x0000000001eb90>
+Did you mean?  posts):
+  
+app/controllers/api/v1/registered/posts_controller.rb:6:in `search'
+Started GET "/api/v1/registered/posts/search?arctic_monkeys" for 172.18.0.1 at 2021-04-05 13:47:25 +0900
+Processing by Api::V1::Registered::PostsController#search as */*
+  Parameters: {"arctic_monkeys"=>nil}
+Completed 500 Internal Server Error in 7ms (Allocations: 2939)
+
+
+  
+NameError (undefined local variable or method `post' for #<Api::V1::Registered::PostsController:0x0000000001ec08>
+Did you mean?  posts):
+  
+app/controllers/api/v1/registered/posts_controller.rb:6:in `search'
+Started GET "/api/v1/registered/posts/search?search=arctic_monkeys" for 172.18.0.1 at 2021-04-05 13:54:14 +0900
+Processing by Api::V1::Registered::PostsController#search as */*
+  Parameters: {"search"=>"arctic_monkeys"}
+Completed 500 Internal Server Error in 10ms (Allocations: 2939)
+
+
+  
+NameError (undefined local variable or method `post' for #<Api::V1::Registered::PostsController:0x0000000001eca8>
+Did you mean?  posts):
+  
+app/controllers/api/v1/registered/posts_controller.rb:6:in `search'
+Started GET "/api/v1/registered/posts/search?search=arctic_monkeys" for 172.18.0.1 at 2021-04-05 13:54:15 +0900
+Processing by Api::V1::Registered::PostsController#search as */*
+  Parameters: {"search"=>"arctic_monkeys"}
+Completed 500 Internal Server Error in 7ms (Allocations: 2939)
+
+
+  
+NameError (undefined local variable or method `post' for #<Api::V1::Registered::PostsController:0x0000000001ed20>
+Did you mean?  posts):
+  
+app/controllers/api/v1/registered/posts_controller.rb:6:in `search'
+Started GET "/api/v1/registered/posts/search?searchartists=arctic_monkeys" for 172.18.0.1 at 2021-04-05 14:00:36 +0900
+Processing by Api::V1::Registered::PostsController#search as */*
+  Parameters: {"searchartists"=>"arctic_monkeys"}
+Completed 500 Internal Server Error in 7ms (Allocations: 2939)
+
+
+  
+NameError (undefined local variable or method `post' for #<Api::V1::Registered::PostsController:0x0000000001edc0>
+Did you mean?  posts):
+  
+app/controllers/api/v1/registered/posts_controller.rb:6:in `search'
+Started GET "/" for 172.18.0.1 at 2021-04-05 14:02:16 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 9.5ms | Allocations: 190)
+Completed 200 OK in 16ms (Views: 14.3ms | Allocations: 838)
+
+
+Started GET "/?code=AQCrBD-sqRUQsDLrQXujFJYBKGMhYCENBfhJWwN8__FNkRHmmFdZPLBFxg6xyl7h84uSfjOwdK7t4a-xqwswvEvD179gfuaBqP20aIwVaAB2FaUTxQ9FM7SJYu1dVMnOqj_C9HEu67AwrMo1XD2-Bdo-CrbRcj1mU9U" for 172.18.0.1 at 2021-04-05 14:04:56 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"code"=>"AQCrBD-sqRUQsDLrQXujFJYBKGMhYCENBfhJWwN8__FNkRHmmFdZPLBFxg6xyl7h84uSfjOwdK7t4a-xqwswvEvD179gfuaBqP20aIwVaAB2FaUTxQ9FM7SJYu1dVMnOqj_C9HEu67AwrMo1XD2-Bdo-CrbRcj1mU9U"}
+  Rendering /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.2ms | Allocations: 8)
+Completed 200 OK in 2ms (Views: 1.9ms | Allocations: 294)
+
+
+Started GET "/?code=AQDfWCtBCB4hwPGdTs1kfWOjUiFHMLdazuPuob41wXEPyzX8UCjI1PxNEtXZqj63jvn3wKLdnSiPLApHj62R51adTpqzwEd7ZmMZkGBCMXAthORuc8X_WSvwaIevLKKcVrV6ASdaxowwvyAWJT63PE-ogfi2jDdkAvI" for 172.18.0.1 at 2021-04-05 14:05:42 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"code"=>"AQDfWCtBCB4hwPGdTs1kfWOjUiFHMLdazuPuob41wXEPyzX8UCjI1PxNEtXZqj63jvn3wKLdnSiPLApHj62R51adTpqzwEd7ZmMZkGBCMXAthORuc8X_WSvwaIevLKKcVrV6ASdaxowwvyAWJT63PE-ogfi2jDdkAvI"}
+  Rendering /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.2ms | Allocations: 7)
+Completed 200 OK in 2ms (Views: 1.8ms | Allocations: 291)
+
+
+Started GET "/api/v1/registered/posts/search" for 172.18.0.1 at 2021-04-05 17:37:25 +0900
+Processing by Api::V1::Registered::PostsController#search as JSON
+  Parameters: {"post"=>{}}
+Completed 500 Internal Server Error in 7ms (Allocations: 2937)
+
+
+  
+NameError (undefined local variable or method `post' for #<Api::V1::Registered::PostsController:0x0000000001efc8>
+Did you mean?  posts):
+  
+app/controllers/api/v1/registered/posts_controller.rb:6:in `search'
+Started GET "/api/v1/registered/posts/search" for 172.18.0.1 at 2021-04-05 17:37:27 +0900
+Processing by Api::V1::Registered::PostsController#search as JSON
+  Parameters: {"post"=>{}}
+Completed 500 Internal Server Error in 7ms (Allocations: 2937)
+
+
+  
+NameError (undefined local variable or method `post' for #<Api::V1::Registered::PostsController:0x0000000001f040>
+Did you mean?  posts):
+  
+app/controllers/api/v1/registered/posts_controller.rb:6:in `search'
+Started GET "/api/v1/registered/posts/search" for 172.18.0.1 at 2021-04-05 17:38:05 +0900
+Processing by Api::V1::Registered::PostsController#search as JSON
+  Parameters: {"post"=>{}}
+Completed 500 Internal Server Error in 6ms (Allocations: 2937)
+
+
+  
+NameError (undefined local variable or method `post' for #<Api::V1::Registered::PostsController:0x0000000001f108>
+Did you mean?  posts):
+  
+app/controllers/api/v1/registered/posts_controller.rb:6:in `search'
+Started GET "/rails/info/routes" for 172.18.0.1 at 2021-04-05 18:27:10 +0900
+  [1m[35m (12.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::InfoController#routes as HTML
+  Rendering layout /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/layouts/application.html.erb
+  Rendering /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/local/bundle/gems/actionpack-6.1.3.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [40 times] (Duration: 7.4ms | Allocations: 6168)
+  Rendered /usr/local/bundle/gems/actionpack-6.1.3.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 7.9ms | Allocations: 945)
+  Rendered /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 26.5ms | Allocations: 10787)
+  Rendered layout /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/layouts/application.html.erb (Duration: 29.1ms | Allocations: 11028)
+Completed 200 OK in 55ms (Views: 38.2ms | ActiveRecord: 0.0ms | Allocations: 13879)
+
+
+Started GET "/favicon.ico" for 172.18.0.1 at 2021-04-05 18:27:10 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
