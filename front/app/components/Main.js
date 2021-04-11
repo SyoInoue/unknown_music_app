@@ -1,43 +1,6 @@
 import { useState } from "react";
 import { Transition } from "@headlessui/react";
 
-/* function DropDown() {
-  const [isOpen, setIsOpen] = useState(false);
-  return (
-    <div className="px-5 pt-4 flex items-center justify-between">
-      <button
-        type="button"
-        onClick={() => setIsOpen(!isOpen)}
-        className="bg-gray-900 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-      ></button>
-
-      <Transition
-        show={isOpen}
-        enter="transition ease-out duration-150 transform"
-        enterFrom="opacity-0 scale-95"
-        enterTo="opacity-100 scale-100"
-        leave="transition ease-in duration-100 transform"
-        leaveFrom="opacity-100 scale-100"
-        leaveTo="opacity-0 scale-95"
-      >
-        {(ref) => (
-          <div
-            ref={ref}
-            className="rounded-lg shadow-md bg-gray-900 ring-1 ring-black ring-opacity-5 overflow-hidden"
-          >
-            <div className="px-5 pt-4 flex items-center justify-between">
-              <button
-                type="button"
-                className="bg-gray-900 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-              ></button>
-            </div>
-          </div>
-        )}
-      </Transition>
-    </div>
-  );
-} */
-
 export default function Main() {
   const [isOpen, setIsOpen] = useState(false);
   const handleToggleButtonClick = () => {
