@@ -1235,3 +1235,34 @@ Started GET "/favicon.ico" for 172.18.0.1 at 2021-04-05 18:27:10 +0900
   
 ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
   
+Started GET "/" for 172.18.0.1 at 2021-04-07 07:17:54 +0900
+  [1m[35m (15.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 13.7ms | Allocations: 465)
+Completed 200 OK in 103ms (Views: 44.1ms | ActiveRecord: 0.0ms | Allocations: 3953)
+
+
+Started GET "/" for 172.19.0.1 at 2021-04-07 09:37:15 +0900
+  [1m[35m (11.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.4ms | Allocations: 361)
+Completed 200 OK in 26ms (Views: 12.7ms | ActiveRecord: 0.0ms | Allocations: 2839)
+
+
+Started GET "/" for 172.18.0.1 at 2021-04-07 13:29:24 +0900
+  [1m[35m (10.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.8ms | Allocations: 361)
+Completed 200 OK in 25ms (Views: 12.6ms | ActiveRecord: 0.0ms | Allocations: 2839)
+
+
+Started GET "/" for 172.18.0.1 at 2021-04-07 13:49:38 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.9ms | Allocations: 184)
+Completed 200 OK in 11ms (Views: 9.9ms | Allocations: 842)
+
+
