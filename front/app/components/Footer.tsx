@@ -1,6 +1,6 @@
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
-const Footer = () => {
+export default function Footer() {
   return (
     <footer className="text-gray-100 body-font bg-gray-900 px-56 w-screen">
       <div className="container px-4 py-5 mx-auto flex items-center sm:flex-row flex-col">
@@ -27,18 +27,17 @@ const Footer = () => {
         </AnchorLink>
         </div>
         <p className="text-sm text-indigo-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4 hidden lg:block">
-          Copyright 2022 Unknown Music
-          <br></br>
+          Copyright 2021 Unknown Music -&nbsp;
           <a
             href="https://twitter.com/syo_tech_IT"
-            className="text-indigo-500 hover:text-indigo-700"
+            className="text-indigo-500 hover:text-indigo-700 ml-1"
             rel="noOpener noReferrer"
             target="_blank"
           >
-          @SyoInoue
+            @SyoInoue
           </a>
         </p>
-        <span className="inline-flex sm:ml-auto mt-0 sm:w-0 justify-center justify-start md:mr-20 w-8/12 mx-auto">
+        <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
           <a
             className="text-indigo-100 hover:text-indigo-300"
             href="https://www.facebook.com/syo.inoue/"
@@ -75,7 +74,7 @@ const Footer = () => {
           </a>
           <a
             className="ml-7 text-indigo-100 hover:text-indigo-300"
-            href="https://www.instagram.com/syo_mont_blanc/?hl=ja"
+            href="https://www.instagram.com/syo_ba.prg/?hl=ja"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -114,4 +113,3 @@ const Footer = () => {
     </footer>
   );
 }
-export default Footer;
