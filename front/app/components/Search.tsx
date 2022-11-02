@@ -18,6 +18,7 @@ import useQueryTracks from "./hooks/useQueryTracks"
 import useArtistParams from "./hooks/useArtistParams"
 import useRecommend from "./hooks/useRecommend"
 import useReTrackParams from "./hooks/useReTrackParams"
+import { Track } from "spotify-types";
 
 interface SearchProps{
   token : string;
@@ -32,35 +33,6 @@ interface SelectedTrackProps{
     trackPopularity: number;
     length? : number;
 }
-interface SetItemResultProps{
-  id: string;
-  name: string;
-  artists: string|any;
-  album: string|any;
-  popularity: number;
-  preview_url: string;
-}
-// interface ArtistsProps{
-//   name: string;
-//   id: string;
-//   href?: string;
-//   popularity?: number;
-//   type?: string;
-//   url?: string;
-//   external_urls?: {
-//     spotify: string
-//   };
-//   followers?: {
-//     href: string
-//     total: number
-//   };
-//   genres?: string[]
-//   images?: {
-//     url: string
-//     height: number
-//     width: number
-//   };
-// }
 interface SelectedRecommendProps{
     reTrackId: string;
     reTrackName: string;
@@ -68,15 +40,7 @@ interface SelectedRecommendProps{
     reTrackArtwork: string;
 }
 
-interface SetLookRecommendProps{
-    id: string;
-    name: string;
-    album: string|any;
-    popularity: number;
-    preview_url: string;
-}
-
-const Search:React.FC<SearchProps> = (props) => {
+const Search:React.FC<SearchProps> = React.memo((props) => {
   const {token, wordFormData} = props;  //wordFormDataはQueryTracksで使用。
   const [playing, setPlaying] = useState(false); //再生停止
   const [playSrc, setPlaySrc] = useState(""); //再生する曲のリロード
@@ -84,7 +48,6 @@ const Search:React.FC<SearchProps> = (props) => {
   const [trailOpen, setTrailOpen] = useState(true); //React-Springの挙動制御
   const [snackBarOpen, setSnackBarOpen] = useState(false); //曲を選んだ後のポップアップ
   const [graphReDisplay, setGraphReDisplay] = useState("none"); //選び直した曲がRadarChartにセットされる
-
   //類似曲のパラメーター
   const [selectedRecommend, setSelectedRecommend] = useState<SelectedRecommendProps>({
     reTrackId: "",
@@ -130,7 +93,6 @@ const Search:React.FC<SearchProps> = (props) => {
     setGraphReDisplay("block");
     setTrailOpen(false);
   };
-
   //ポップアップトランジション
   type TransitionProps = Omit<SlideProps, 'direction'>;
   const [transition, setTransition] = useState<
@@ -177,13 +139,6 @@ const Search:React.FC<SearchProps> = (props) => {
               データグラフとおすすめ曲が準備されました
             </Alert>
           </Snackbar>
-        {/* 発火条件：トラック選択完了後 */}
-      <>
-        {selectedTrack.length !== 0 && setArtistInfo}
-        {/* 選ばれた曲を元に類似曲を取得 */}
-        {/* 発火条件：アーティスト情報取得後 */}
-        {artistInfo.length !== 0 && setLookRecommend}
-      </>
         {/* 要素表示トグル 音量調節 */}
         <Grid container spacing={0}>
           <Grid
@@ -261,7 +216,7 @@ const Search:React.FC<SearchProps> = (props) => {
                   <Typography variant="h4" className="text-center text-purple-400 font-serif">RecommendList</Typography>
                 </Grid>
                 <ul>
-                  {lookRecommend.map((props:SetLookRecommendProps) => (
+                  {lookRecommend.map((props:Track) => (
                     <li
                       className="list-none border-b border-solid border-purple-700 pt-3 pb-3 pl-0 transition-all"
                       key={props.id}
@@ -308,7 +263,7 @@ const Search:React.FC<SearchProps> = (props) => {
           </div>
           :<><Typography variant="h4" className="pl-3 text-center text-purple-400">TrackList</Typography>
             <ul className="m-0 p-0" onClick={handleSnackBarOpen}>
-              {itemResult.map((props:SetItemResultProps) =>
+              {itemResult.map((props:Track) =>
                 <li
                   className="list-none border-b border-solid border-purple-700 pt-3 pb-3 pl-0 transition-all"
                   key={props.id}
@@ -339,5 +294,6 @@ const Search:React.FC<SearchProps> = (props) => {
         }
       </div>
     </div>
-  )};
+  )
+});
 export default Search;

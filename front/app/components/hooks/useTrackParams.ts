@@ -1,28 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import axios from "axios"
+import { TuneableTrack } from "spotify-types";
 
 interface TrackParamsProps{
   token: string;
   trackId: string;
 }
-interface SetTrackInfoProps{
-  danceability: number;
-  energy: number;
-  loudness: number;
-  valence: number;
-  tempo: number;
-}
 
 //曲IDからトラックパラメータ取得
 const useTrackParams = (props:TrackParamsProps) => {
 const {token, trackId} = props;
-const [trackInfo, setTrackInfo] = useState<SetTrackInfoProps>({
-  danceability: 0,
-  energy: 0,
-  loudness: 0,
-  valence: 0,
-  tempo: 0,
-  });
+const [trackInfo, setTrackInfo] = useState<TuneableTrack>();
 
 //曲のパラメーターの取得。TrackParams
   useEffect(() => {
@@ -41,5 +29,5 @@ const [trackInfo, setTrackInfo] = useState<SetTrackInfoProps>({
   }, [trackId])
 
   return trackInfo
-}
+};
 export default useTrackParams;

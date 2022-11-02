@@ -57,7 +57,7 @@ const myOptions = {
   }
 };
 
-const ParamsGraph = React.memo((props: ParamsProps) => {
+const ParamsGraph:React.FC<ParamsProps>  = React.memo((props) => {
   const {FirstPopularity, FirstLoudness, FirstTempo, RePopularity, ReLoudness, ReTempo,
         reTrackName, ReValence, ReDanceAbility, ReEnergy, trackName, FirstValence, FirstDanceAbility,
         FirstEnergy} = props;
@@ -147,35 +147,35 @@ const ParamsGraph = React.memo((props: ParamsProps) => {
 
   return (
     <>
-    <ThemeProvider theme={theme}>
-      <Grid container direction="row">
-        <Radar data={data} options={myOptions} {...props} width={600} height={600} />
-          {FirstTempo !== undefined && (
-            <GridStyle item xs={6}>
-                <BpmStyle variant="h4">
-                  BPM
-                </BpmStyle>
-              <Typography variant="h3" style={{ color: "#1db954" }}>
-                <CountUp end={Math.trunc(FirstTempo)} />
-              </Typography>
-          </GridStyle>
-          )}
-        {ReTempo !== undefined && (
-            <GridStyle item xs={6}>
-                <BpmStyle variant="h4">
-                  BPM
-                </BpmStyle>
-              <BpmStyle variant="h3">
-                <CountUp
-                  end={Math.trunc(ReTempo)}
-                  className="text-purple-600"
-                />
-              </BpmStyle>
+      <ThemeProvider theme={theme}>
+        <Grid container direction="row">
+          <Radar data={data} options={myOptions} width={600} height={600}/>
+            {FirstTempo !== undefined && (
+              <GridStyle item xs={6}>
+                  <BpmStyle variant="h4">
+                    BPM
+                  </BpmStyle>
+                <Typography variant="h3" style={{ color: "#1db954" }}>
+                  <CountUp end={Math.trunc(FirstTempo)} />
+                </Typography>
             </GridStyle>
-          )}
-      </Grid>
-      </ThemeProvider>
+            )}
+          {ReTempo !== undefined && (
+              <GridStyle item xs={6}>
+                  <BpmStyle variant="h4">
+                    BPM
+                  </BpmStyle>
+                <BpmStyle variant="h3">
+                  <CountUp
+                    end={Math.trunc(ReTempo)}
+                    className="text-purple-600"
+                  />
+                </BpmStyle>
+              </GridStyle>
+            )}
+        </Grid>
+        </ThemeProvider>
     </>
-  );
-})
+  )
+});
 export default ParamsGraph;

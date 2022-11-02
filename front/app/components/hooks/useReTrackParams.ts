@@ -40,5 +40,5 @@ const useReTrackParams = (props:ReTrackParamsProps) => {
       })
   }, [reTrackId])
   return reTrackInfo
-}
+};
 export default useReTrackParams;

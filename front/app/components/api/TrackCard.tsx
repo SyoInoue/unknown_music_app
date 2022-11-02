@@ -1,8 +1,9 @@
+import React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import { styled } from "@mui/material/styles";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import NotInterestedIcon from "@material-ui/icons/NotInterested";
 import PauseCircleOutlineIcon from "@material-ui/icons/PauseCircleOutline";
 import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
@@ -15,14 +16,14 @@ interface TrackCardProps{
   artistName: string;
   artworkUrl: string;
   trackName: string;
-  previewUrl: string|number|boolean;
+  previewUrl: string;
   playing: boolean;
-  playSrc: string;
   setPlaying: React.Dispatch<React.SetStateAction<boolean>>;
-  setPlaySrc: React.Dispatch<React.SetStateAction<string|any>>;
+  playSrc: string;
+  setPlaySrc: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const CardStyle = styled(Card)(({ theme }) => ({
+const CardStyle = styled(Card)(() => ({
   display: "flex",
   backgroundColor: "#1e1022",
   color: "#ff87d6",
@@ -30,12 +31,12 @@ const CardStyle = styled(Card)(({ theme }) => ({
   height: 100,
 }));
 
-const CardMediaStyle = styled(CardMedia)(({ theme }) => ({
+const CardMediaStyle = styled(CardMedia)(() => ({
   width: 100,
   height: 100,
 }));
 
-const CardContentStyle = styled(CardContent)(({ theme }) => ({
+const CardContentStyle = styled(CardContent)(() => ({
   width: "calc(100% - 100px)",
   extOverflow: "ellipsis",
   overflow: "hidden",
@@ -43,7 +44,7 @@ const CardContentStyle = styled(CardContent)(({ theme }) => ({
   padding: 10,
 }));
 
-const TrackCard = (props: TrackCardProps) =>  {
+const TrackCard:React.FC<TrackCardProps> = React.memo((props) =>  {
 
   //再生ボタンの条件分岐に使用
   let ButtonLooks = false;
@@ -87,94 +88,80 @@ const TrackCard = (props: TrackCardProps) =>  {
   })
 
 
-return (
-<div>
+  return (
+    <>
 {/* ---------アルバムアートワーク--------- */}
-  <ThemeProvider theme={theme}>
-    <CardStyle elevation={2}>
-        {props.previewUrl !== undefined ? (
-          <CardMediaStyle
-            onClick={() => {
-              handleStartStop();
-            }}
-            image={props.artworkUrl}
-          />
-        ) : (
-          <CardMediaStyle image={props.artworkUrl} />
-        )}
-{/* ---------アルバムアートワーク--------- */}
-
+      <ThemeProvider theme={theme}>
+        <CardStyle elevation={2}>
+            {props.previewUrl !== undefined ? (
+              <CardMediaStyle
+                onClick={() => {
+                  handleStartStop();
+                }}
+                image={props.artworkUrl}
+              />
+            ) : (
+              <CardMediaStyle image={props.artworkUrl} />
+            )}
 {/* ---------アーティスト情報--------- */}
-      <CardContentStyle>
-          <div>
-            <Typography
-              component="h6"
-              variant="h6"
-              style={{ color: "#bc00eb", fontSize: 18, }}
-              noWrap
-            >
-              {props.trackName}
-            </Typography>
-            <div className="flex relative">
-              <Typography
-                variant="subtitle1"
-                noWrap
-                style={{ color: "#A78BFA" }}
-              >
-                {props.artistName}
-              </Typography>
-            </div>
-{/* ---------アーティスト情報--------- */}
-
+          <CardContentStyle>
+              <div>
+                <Typography
+                  component="h6"
+                  variant="h6"
+                  style={{ color: "#bc00eb", fontSize: 18, }}
+                  noWrap
+                >
+                  {props.trackName}
+                </Typography>
+                <div className="flex relative">
+                  <Typography
+                    variant="subtitle1"
+                    noWrap
+                    style={{ color: "#A78BFA" }}
+                  >
+                    {props.artistName}
+                  </Typography>
+                </div>
 {/* ------------------アイコン類------------------ */}
-            <div className="absolute px-30 -py-22">
-
+                <div className="absolute px-30 -py-22">
 {/* ---------後で聞く機能--------- */}
-                <AddIcon
-                  style={{ color: "#bc00eb", fontSize: 30 , marginRight: 5}}
-                />
-{/* ---------後で聞く機能--------- */}
-
+                    <AddIcon
+                      style={{ color: "#bc00eb", fontSize: 30 , marginRight: 5}}
+                    />
 {/* ---------いいね機能--------- */}
-                  <FavoriteBorderIcon
-                    style={{ color: "#bc00eb", fontSize: 30 , marginRight: 5}}
-                  />
-                  <FavoriteIcon
-                    style={{ color: "#bc00eb", fontSize: 28, display: "none", marginRight: 5 }}
-                  />
-{/* ---------いいね機能--------- */}
-
-{/* ---------再生ボタン機能--------- */}
-                {props.previewUrl !== 0 && props.previewUrl !== null ? (
-                  <>
-                    {ButtonLooks ? (
-                      <PauseCircleOutlineIcon
-                        style={{ color: "#bc00eb", fontSize: 30, width: 30 , height: "auto" , alignItems: "center" }}
-                        onClick={() => {
-                          handleStopPlaying();
-                        }}
+                      <FavoriteBorderIcon
+                        style={{ color: "#bc00eb", fontSize: 30 , marginRight: 5}}
                       />
+                      <FavoriteIcon
+                        style={{ color: "#bc00eb", fontSize: 28, display: "none", marginRight: 5 }}
+                      />
+{/* ---------再生ボタン機能--------- */}
+                    {props.previewUrl !== null ? (
+                      <>
+                        {ButtonLooks ? (
+                          <PauseCircleOutlineIcon
+                            style={{ color: "#bc00eb", fontSize: 30, width: 30 , height: "auto" , alignItems: "center" }}
+                            onClick={() => { handleStopPlaying(); }}
+                          />
+                        ) : (
+                          <PlayCircleOutlineIcon
+                            style={{ color: "#bc00eb", fontSize: 30, width: 30 , height: "auto" , alignItems: "center" }}
+                            onClick={() => { handleStartPlaying(); }}
+                          />
+                        )}
+                      </>
                     ) : (
-                      <PlayCircleOutlineIcon
-                        style={{ color: "#bc00eb", fontSize: 30, width: 30 , height: "auto" , alignItems: "center" }}
-                        onClick={() => {
-                          handleStartPlaying();
-                        }}
+                      <NotInterestedIcon
+                        style={{ color: "#7f7f7f", fontSize: 30, width: 30 , height: "auto" , alignItems: "center" }}
                       />
                     )}
-                  </>
-                ) : (
-                  <NotInterestedIcon
-                    style={{ color: "#7f7f7f", fontSize: 30, width: 30 , height: "auto" , alignItems: "center" }}
-                  />
-                )}
-{/* ---------再生ボタン機能--------- */}
-                </div>
-              </div>
-        </CardContentStyle>
-    </CardStyle>
-  </ThemeProvider>
-</div>
-  );
-}
+                    </div>
+                  </div>
+            </CardContentStyle>
+        </CardStyle>
+      </ThemeProvider>
+    </>
+  )
+});
 export default TrackCard;

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Track } from "spotify-types";
 
 interface RecommendProps{
   token: string;
@@ -7,17 +8,10 @@ interface RecommendProps{
   artistId: string;
   artistGenres: string;
 }
-interface LookRecommendProps{
-  id: number;
-  name: string;
-  popularity: string;
-  album: string;
-  map?: any;
-}
 //選んだ曲のアーティストID、ジャンル、トラックIDからトラックパラメータ取得
 const useRecommend = (props : RecommendProps) => {
   const {token, trackId, artistId, artistGenres} = props;
-  const [lookRecommend, setLookRecommend] = useState<LookRecommendProps>(); //レコメンドする曲 Recommend
+  const [lookRecommend, setLookRecommend] = useState<Track[]>([]); //レコメンドする曲 Recommend
   console.debug(props.artistGenres);
   useEffect(() => {
     axios(
@@ -39,8 +33,6 @@ const useRecommend = (props : RecommendProps) => {
         console.debug("err:", err);
       });
   }, [trackId]);
-  return (
-      {lookRecommend, setLookRecommend}
-        )
-}
+  return ( {lookRecommend, setLookRecommend} )
+};
 export default useRecommend;

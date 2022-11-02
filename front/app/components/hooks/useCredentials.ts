@@ -21,5 +21,5 @@ const useCredentials = () => {
     )
   }, [])
   return token
-  }
+  };
   export default useCredentials;
