@@ -87,13 +87,14 @@ const Header:React.FC = () => {
               </div>
               <div className="hidden sm:block sm:ml-6">
                 <div className="flex space-x-4">
-                  <a
-                    href="/top-contents"
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xs lg:text-sm font-medium"
-                    aria-current="page"
-                  >
-                    メインコンテンツ
-                  </a>
+                  <Link href="/top-contents">
+                    <a
+                      className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xs lg:text-sm font-medium"
+                      aria-current="page"
+                    >
+                      メインコンテンツ
+                    </a>
+                  </Link>
                   <Link href="/admin-page">
                     <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xs lg:text-sm font-medium">
                       運営者情報
