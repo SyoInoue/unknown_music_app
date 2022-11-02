@@ -40,7 +40,7 @@ interface SelectedRecommendProps{
     reTrackArtwork: string;
 }
 
-const Search:React.FC<SearchProps> = React.memo((props) => {
+const Search:React.FC<SearchProps> = (props) => {
   const {token, wordFormData} = props;  //wordFormDataはQueryTracksで使用。
   const [playing, setPlaying] = useState(false); //再生停止
   const [playSrc, setPlaySrc] = useState(""); //再生する曲のリロード
@@ -295,5 +295,5 @@ const Search:React.FC<SearchProps> = React.memo((props) => {
       </div>
     </div>
   )
-});
+};
 export default Search;

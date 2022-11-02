@@ -57,7 +57,7 @@ const myOptions = {
   }
 };
 
-const ParamsGraph:React.FC<ParamsProps>  = React.memo((props) => {
+const ParamsGraph:React.FC<ParamsProps>  = (props) => {
   const {FirstPopularity, FirstLoudness, FirstTempo, RePopularity, ReLoudness, ReTempo,
         reTrackName, ReValence, ReDanceAbility, ReEnergy, trackName, FirstValence, FirstDanceAbility,
         FirstEnergy} = props;
@@ -177,5 +177,5 @@ const ParamsGraph:React.FC<ParamsProps>  = React.memo((props) => {
         </ThemeProvider>
     </>
   )
-});
+};
 export default ParamsGraph;

@@ -12,7 +12,7 @@ const Profile:React.FC = () => {
               <div className="flex flex-wrap justify-center">
                 <div className="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                   <div className="relative mt-10">
-                    <Image width={120} height={120} alt='avator'
+                    <Image width={120} height={120} alt="avator"
                     src="/images/sample_icon.jpeg"
                     className="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px" />
                   </div>
@@ -63,7 +63,7 @@ const Profile:React.FC = () => {
               </div>
               <img className="lg:w-1/3 md:w-1/2 w-2/3 block mx-auto mb-10 object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600"/>
               <div className="flex flex-col text-center w-full mb-3">
-                <p className="lg:w-2/3 md:w-1/2 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom prism food truck ugh squid celiac humblebrag.</p>
+                <p className="lg:w-2/3 md:w-1/2 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably selfies heirloom prism food truck ugh squid celiac humblebrag.</p>
               </div>
               <div className="flex justify-center">
                 <Link href="/">

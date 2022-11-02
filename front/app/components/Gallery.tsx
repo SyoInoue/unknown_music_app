@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "next/link"
 
 const Gallery:React.FC = () => {
   return (
@@ -21,7 +21,7 @@ const Gallery:React.FC = () => {
               </p>
               <Link href="/login-page">
                 <a className="mt-3 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-800 rounded hover:bg-indigo-900">
-                  Let's Go
+                  Let&apos;s Go
                   <svg
                     fill="none"
                     stroke="currentColor"
@@ -53,22 +53,21 @@ const Gallery:React.FC = () => {
                     普段出会えない<br />
                     珠玉の一曲に出会おう!!
                   </p>
-                  <a
-                    className="mt-3 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-800 rounded hover:bg-indigo-900"
-                    href="/top-contents"
-                  >
-                    Learn More
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeWidth="2"
-                      className="w-4 h-4 ml-2"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                  </a>
+                  <Link href="/top-contents">
+                    <a className="mt-3 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-800 rounded hover:bg-indigo-900">
+                      Learn More
+                      <svg
+                        fill="none"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeWidth="2"
+                        className="w-4 h-4 ml-2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                      </svg>
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -88,22 +87,21 @@ const Gallery:React.FC = () => {
                   曲がもつ様々な<br />
                   パラメーターを確認してみよう!!
                   </p>
-                  <a
-                    className="mt-3 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-800 rounded hover:bg-indigo-900"
-                    href="/top-contents"
-                  >
-                    Learn More
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeWidth="2"
-                      className="w-4 h-4 ml-2"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                  </a>
+                  <Link href="/top-contents">
+                    <a className="mt-3 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-800 rounded hover:bg-indigo-900">
+                      Learn More
+                      <svg
+                        fill="none"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeWidth="2"
+                        className="w-4 h-4 ml-2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                      </svg>
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>

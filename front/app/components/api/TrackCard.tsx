@@ -44,7 +44,7 @@ const CardContentStyle = styled(CardContent)(() => ({
   padding: 10,
 }));
 
-const TrackCard:React.FC<TrackCardProps> = React.memo((props) =>  {
+const TrackCard:React.FC<TrackCardProps> = (props) =>  {
 
   //再生ボタンの条件分岐に使用
   let ButtonLooks = false;
@@ -163,5 +163,5 @@ const TrackCard:React.FC<TrackCardProps> = React.memo((props) =>  {
       </ThemeProvider>
     </>
   )
-});
+};
 export default TrackCard;

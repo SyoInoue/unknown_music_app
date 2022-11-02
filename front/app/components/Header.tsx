@@ -105,12 +105,12 @@ const Header:React.FC = () => {
                     </a>
                   </Link>
                   <Link href="/contact-form">
-                  <a
-                    href="#"
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xs lg:text-sm font-medium"
-                  >
-                    お問い合わせ
-                  </a>
+                    <a
+                      href="#"
+                      className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xs lg:text-sm font-medium"
+                    >
+                      お問い合わせ
+                    </a>
                   </Link>
                 </div>
               </div>
@@ -144,13 +144,14 @@ const Header:React.FC = () => {
               </button>
             {isOpen ? (
               <div className="origin-top-right px-2 absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-gray-100 focus:outline-none">
-                <a
-                  href="/my-page"
-                  className="block px-3 py-2 text-sm rounded-md text-gray-900 hover:bg-gray-300"
-                  role="menuitem"
-                >
-                  マイページ
-                </a>
+                <Link href="/my-page">
+                  <a
+                    className="block px-3 py-2 text-sm rounded-md text-gray-900 hover:bg-gray-300"
+                    role="menuitem"
+                  >
+                    マイページ
+                  </a>
+                </Link>
                 <a
                   href="#"
                   className="block px-3 py-2 text-sm rounded-md text-gray-900 hover:bg-gray-300"
