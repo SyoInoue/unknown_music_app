@@ -37,12 +37,7 @@ const TopContents:React.FC = () => {
                   onChange={(e) => setWordFormData(e.target.value)}
                 />
               </form>
-              {wordFormData.length === 0 ? (
-                <>
-                </>
-              ) : (
-                <Search token={token} wordFormData={wordFormData} />
-              )}
+              {wordFormData.length !== 0 && <Search token={token} wordFormData={wordFormData} />}
             </Grid>
           </Grid>
       </div>

@@ -33,7 +33,7 @@ const useArtistParams = (props:ArtistParamsProps) => {
   popularity: 0,
   type: "",
   uri: "",
-}); //アーティスト情報の取得 ArtistInf,
+}); //アーティスト情報の取得 ArtistInfo,
   useEffect(() => {
     axios(`https://api.spotify.com/v1/artists/${artistId}`, {
       method: "GET",

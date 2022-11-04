@@ -18,7 +18,7 @@ import useQueryTracks from "./hooks/useQueryTracks"
 import useArtistParams from "./hooks/useArtistParams"
 import useRecommend from "./hooks/useRecommend"
 import useReTrackParams from "./hooks/useReTrackParams"
-import { Track } from "spotify-types";
+import { Track } from "spotify-types"
 
 interface SearchProps{
   token : string;

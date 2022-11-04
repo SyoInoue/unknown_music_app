@@ -11,7 +11,7 @@ import Spacer from "../components/Spacer";
 
 const Home:React.FC = () => {
   return (
-    <Layout title="Main-Page">
+    <Layout title="UnknownMusic">
       <div className="mt-24 container">
         <TopWrapper />
       </div>
