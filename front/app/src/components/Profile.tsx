@@ -1,5 +1,4 @@
-import Link from 'next/link'
-import Image from 'next/image'
+import Exit from './Exit'
 
 const Profile: React.FC = () => {
   return (
@@ -9,17 +8,6 @@ const Profile: React.FC = () => {
           <div className='relative flex flex-col min-w-0 break-words bg-gray-900 w-full mb-6 shadow-xl rounded-lg'>
             <div className='px-6'>
               <div className='flex flex-wrap justify-center'>
-                <div className='w-full lg:w-3/12 px-4 lg:order-2 flex justify-center'>
-                  <div className='relative mt-10'>
-                    <Image
-                      width='120'
-                      height='120'
-                      alt='avator'
-                      src='/images/sample_icon.jpeg'
-                      className='shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px'
-                    />
-                  </div>
-                </div>
                 <div className='hidden lg:block w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center mt-10'>
                   <div className='py-6 px-20 mt-32 sm:mt-0'>
                     <button
@@ -95,11 +83,11 @@ const Profile: React.FC = () => {
                     </p>
                   </a>
                 </div>
-                <img
-                  className='lg:w-1/3 md:w-1/2 w-2/3 block mx-auto mb-10 object-cover object-center rounded'
-                  alt='hero'
-                  src='https://dummyimage.com/720x600'
-                />
+                <div className=' flex justify-center items-center'>
+                  <div className='bg-gray-500 max-w-sm w-full h-80 mb-8'>
+                    <div className='text-center mt-36'>sample</div>
+                  </div>
+                </div>
                 <div className='flex flex-col text-center w-full mb-3'>
                   <p className='lg:w-2/3 md:w-1/2 mx-auto leading-relaxed text-base'>
                     Whatever cardigan tote bag tumblr hexagon brooklyn
@@ -108,27 +96,7 @@ const Profile: React.FC = () => {
                     squid celiac humblebrag.
                   </p>
                 </div>
-                <div className='flex justify-center'>
-                  <Link href='/'>
-                    <div className='flex cursor-pointer my-12 hover:text-gray-300'>
-                      <svg
-                        className='w-6 h-6 mr-6'
-                        fill='none'
-                        stroke='currentColor'
-                        viewBox='0 0 24 24'
-                        xmlns='http://www.w3.org/2000/svg'
-                      >
-                        <path
-                          strokeLinecap='round'
-                          strokeLinejoin='round'
-                          strokeWidth={2}
-                          d='M11 19l-7-7 7-7m8 14l-7-7 7-7'
-                        />
-                      </svg>
-                      <span>Back to main page</span>
-                    </div>
-                  </Link>
-                </div>
+                <Exit />
               </div>
             </div>
           </div>

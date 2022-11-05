@@ -316,7 +316,7 @@ const Search: React.FC<SearchProps> = (props) => {
           <>
             <Typography
               variant='h4'
-              className='pl-3 text-center text-purple-400'
+              className='pl-3 text-center text-purple-400 font-serif'
             >
               TrackList
             </Typography>
