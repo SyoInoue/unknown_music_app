@@ -12,7 +12,7 @@ import Snackbar from '@mui/material/Snackbar'
 import NotInterestedIcon from '@material-ui/icons/NotInterested'
 import VolumeDown from '@material-ui/icons/VolumeDown'
 import VolumeUp from '@material-ui/icons/VolumeUp'
-import { SlideProps } from '@mui/material/Slide'
+import { SlideProps } from '@mui/material/Slide' // eslint-disable-line
 import useTrackParams from './hooks/useTrackParams'
 import useQueryTracks from './hooks/useQueryTracks'
 import useArtistParams from './hooks/useArtistParams'
@@ -316,7 +316,7 @@ const Search: React.FC<SearchProps> = (props) => {
           <>
             <Typography
               variant='h4'
-              className='pl-3 text-center text-purple-400'
+              className='pl-3 text-center text-purple-400 font-serif'
             >
               TrackList
             </Typography>

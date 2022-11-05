@@ -34,9 +34,9 @@
     "next.config.js",
     "src/pages/index.tsx",
     "src/pages/_app.tsx",
-    "src/components/Search.jsx",
-    "src/components/Atoms/Trail.js",
-    "src/components/Header.jsx"
+    "src/components/Search.tsx",
+    "src/components/api/Trail.js",
+    "src/components/Header.tsx"
   ],
   "exclude": ["node_modules"]
 }
