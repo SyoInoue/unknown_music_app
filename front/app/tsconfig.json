@@ -18,12 +18,25 @@
     "jsx": "preserve",
     "incremental": true,
     "outDir": "./dist",
-    "jsxImportSource" : "@emotion/react",
+    "jsxImportSource": "@emotion/react",
     "paths": {
       "@mui/styled-engine": ["./node_modules/@mui/styled-engine-sc"]
-            },
+    },
     "types": ["@emotion/react/types/css-prop"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "postcss.config.js", "tailwind.config.js", "postcss.config.js", "next.config.js", "pages/index.tsx", "pages/_app.tsx", "components/Search.jsx", "components/Atoms/Trail.js", "components/Header.jsx"],
+  "include": [
+    "src/types/next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "postcss.config.js",
+    "tailwind.config.js",
+    "postcss.config.js",
+    "next.config.js",
+    "src/pages/index.tsx",
+    "src/pages/_app.tsx",
+    "src/components/Search.jsx",
+    "src/components/Atoms/Trail.js",
+    "src/components/Header.jsx"
+  ],
   "exclude": ["node_modules"]
 }
