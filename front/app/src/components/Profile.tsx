@@ -1,6 +1,9 @@
+import DialogAlerts from './DialogAlerts'
 import Exit from './Exit'
+import React, { useState } from 'react'
 
 const Profile: React.FC = () => {
+  const [digOpen, setDigOpen] = useState(false) //DialogState
   return (
     <main className='profile-page'>
       <section className='relative py-16 bg-blueGray-200 mt-20'>
@@ -13,9 +16,14 @@ const Profile: React.FC = () => {
                     <button
                       className='hidden lg:block bg-pink-500 uppercase text-white font-bold shadow-md shadow text-xs px-4 py-4 rounded hover:bg-pink-400 hover:border-pink-400 hover:text-white'
                       type='button'
+                      onClick={() => setDigOpen(true)}
                     >
                       マイページ編集
                     </button>
+                    <DialogAlerts
+                      open={digOpen}
+                      close={() => setDigOpen(false)}
+                    />
                   </div>
                 </div>
                 <div className='w-full lg:w-4/12 px-4 lg:order-1 lg:pt-14'>
