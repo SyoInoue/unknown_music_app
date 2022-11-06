@@ -1,7 +1,8 @@
 import React from 'react'
-import { useTrail, a } from 'react-spring'
+import { useTrail, animated as a } from '@react-spring/web'
 
 const Trail = ({ open, children, ...props }) => {
+  // アニメーション対象と設定の初期化
   const items = React.Children.toArray(children)
   const trail = useTrail(items.length, {
     config: { mass: 10, tension: 8000, friction: 200 },

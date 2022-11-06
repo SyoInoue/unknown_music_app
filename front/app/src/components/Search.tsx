@@ -9,9 +9,9 @@ import Alert from '@mui/material/Alert'
 import ReactHowler from 'react-howler'
 import Slider from '@mui/material/Slider'
 import Snackbar from '@mui/material/Snackbar'
-import NotInterestedIcon from '@material-ui/icons/NotInterested'
-import VolumeDown from '@material-ui/icons/VolumeDown'
-import VolumeUp from '@material-ui/icons/VolumeUp'
+import NotInterestedIcon from '@mui/icons-material/NotInterested'
+import VolumeDownIcon from '@mui/icons-material/VolumeDown'
+import VolumeUpIcon from '@mui/icons-material/VolumeUp'
 import { SlideProps } from '@mui/material/Slide' // eslint-disable-line
 import useTrackParams from './hooks/useTrackParams'
 import useQueryTracks from './hooks/useQueryTracks'
@@ -194,7 +194,7 @@ const Search: React.FC<SearchProps> = (props) => {
             xs={2}
             sm={1}
           >
-            <VolumeDown style={{ color: '#9900ff' }} />
+            <VolumeDownIcon style={{ color: '#9900ff' }} />
           </Grid>
           <Grid
             item={true}
@@ -218,7 +218,7 @@ const Search: React.FC<SearchProps> = (props) => {
             xs={2}
             sm={1}
           >
-            <VolumeUp style={{ color: '#9900ff' }} />
+            <VolumeUpIcon style={{ color: '#9900ff' }} />
           </Grid>
         </Grid>
         {/* グラフコンポーネントへの値設定 */}
@@ -336,6 +336,20 @@ const Search: React.FC<SearchProps> = (props) => {
                     })
                   }
                 >
+                  {/* Trail発火で消えてしまうため、RadarChartの下のTrackCard表示 */}
+                  {trailOpen == false ? (
+                    <TrackCard
+                      artistName={props.album.artists[0].name}
+                      artworkUrl={props.album.images[1].url}
+                      trackName={props.name}
+                      previewUrl={props.preview_url}
+                      playing={playing}
+                      playSrc={playSrc}
+                      setPlaying={setPlaying}
+                      setPlaySrc={setPlaySrc}
+                    ></TrackCard>
+                  ) : undefined}
+                  {/* Trail発火で消えてしまうため、RadarChartの下のTrackCard表示 */}
                   <Trail open={trailOpen}>
                     <TrackCard
                       artistName={props.album.artists[0].name}
