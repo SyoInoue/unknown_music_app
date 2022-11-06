@@ -1,18 +1,20 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import DialogAlerts from './DialogAlerts'
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false) //rightMenuState
   const [thisOpen, setThisOpen] = useState(false) //leftMenuState
-  //containsは引数がdropdownRef.currentの子孫である場合trueを返す
-  //e.targetはイベントが発生した要素を指す
+  const [digOpen, setDigOpen] = useState(false) //DialogState
+
+  //rightMenu関数
   const handleIsOpenClick = () => {
     {
       setIsOpen(!isOpen)
     }
   }
-
+  //leftMenu関数
   const handleThisOpenClick = () => {
     {
       setThisOpen(!thisOpen)
@@ -160,20 +162,24 @@ const Header: React.FC = () => {
                       マイページ
                     </a>
                   </Link>
-                  <a
-                    href='#'
+                  <button
+                    onClick={() => setDigOpen(true)}
                     className='block px-3 py-2 text-sm rounded-md text-gray-900 hover:bg-gray-300'
                     role='menuitem'
                   >
                     プロフィール編集
-                  </a>
-                  <a
-                    href='#'
+                  </button>
+                  <DialogAlerts
+                    open={digOpen}
+                    close={() => setDigOpen(false)}
+                  />
+                  <button
+                    onClick={() => setDigOpen(true)}
                     className='block px-3 py-2 text-sm rounded-md text-gray-900 hover:bg-gray-300'
                     role='menuitem'
                   >
                     ログアウト
-                  </a>
+                  </button>
                 </div>
               ) : undefined}
             </div>

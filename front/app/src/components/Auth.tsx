@@ -4,6 +4,7 @@ import { useState } from 'react' //ReactHooksのuseState(コンポーネント�
 import { useRouter } from 'next/router' //next.jsからuseRouter
 import Cookie from 'universal-cookie' //universal-cookieからCookie
 import Image from 'next/image'
+import DialogAlerts from './DialogAlerts'
 
 //取得したJWTトークンをCookieに格納する。
 const cookie = new Cookie()
@@ -13,6 +14,7 @@ const Auth: React.FC = () => {
   const [email, setEmail] = useState('') //useStateでlocalStateを定義する。
   const [password, setPassword] = useState('')
   const [isLogin, setIsLogin] = useState(true) //ログイン、レジスターモードを定義するState
+  const [digOpen, setDigOpen] = useState(false) //DialogState
 
   //ログイン処理。ログイン用の関数
   const login = async () => {
@@ -139,9 +141,11 @@ const Auth: React.FC = () => {
         </div>
 
         <div>
+          <DialogAlerts open={digOpen} close={() => setDigOpen(false)} />
           <button
             type='submit'
             className='group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
+            onClick={() => setDigOpen(true)}
           >
             <span className='absolute left-0 inset-y-0 flex items-center pl-3'>
               <svg
