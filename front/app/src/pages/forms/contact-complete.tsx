@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import Layout from '../../components/Layout'
+import { NextPage } from 'next'
 
-const ContactComplete: React.FC = () => {
+const ContactComplete: NextPage = () => {
   setTimeout(() => {
     window.location.href = '/'
   }, 3 * 1000)

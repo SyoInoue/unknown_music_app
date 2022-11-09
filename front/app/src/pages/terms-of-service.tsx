@@ -1,8 +1,9 @@
 import Exit from '../components/Exit'
 import Layout from '../components/Layout'
 import Service from '../components/Service'
+import { NextPage } from 'next'
 
-const TermsOfService: React.FC = () => {
+const TermsOfService: NextPage = () => {
   return (
     <Layout title='Terms-Of-Service'>
       <section className='pt-36 flex'>

@@ -3,10 +3,10 @@ import Loader from 'react-loader-spinner'
 import ParamsGraph from './api/ParamsGraph'
 import TrackCard from './api/TrackCard'
 import Trail from './api/Trail'
+import ReactHowler from 'react-howler'
 import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
 import Alert from '@mui/material/Alert'
-import ReactHowler from 'react-howler'
 import Slider from '@mui/material/Slider'
 import Snackbar from '@mui/material/Snackbar'
 import NotInterestedIcon from '@mui/icons-material/NotInterested'
@@ -19,26 +19,11 @@ import useArtistParams from './hooks/useArtistParams'
 import useRecommend from './hooks/useRecommend'
 import useReTrackParams from './hooks/useReTrackParams'
 import { Track } from 'spotify-types'
-
-interface SearchProps {
-  token: string
-  wordFormData: string
-}
-interface SelectedTrackProps {
-  trackId: string
-  trackName: string
-  trackArtistId: string
-  trackArtistName: string
-  trackArtworkUrl: string
-  trackPopularity: number
-  length?: number
-}
-interface SelectedRecommendProps {
-  reTrackId: string
-  reTrackName: string
-  reTrackPopularity: number
-  reTrackArtwork: string
-}
+import {
+  SearchProps,
+  SelectedTrackProps,
+  SelectedRecommendProps,
+} from './searchTypeProps'
 
 const Search: React.FC<SearchProps> = (props) => {
   const { token, wordFormData } = props //wordFormDataはQueryTracksで使用。

@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import Layout from '../components/Layout'
-import Search from '../components/Search'
+import Search from '../components/search/Search'
 import TextField from '@mui/material/TextField'
-import useCredentials from '../components/hooks/useCredentials'
+import useCredentials from '../components/search/hooks/useCredentials'
+import { NextPage } from 'next'
 
-const TopContents: React.FC = () => {
+const TopContents: NextPage = () => {
   const token = useCredentials()
   const [wordFormData, setWordFormData] = useState('')
 

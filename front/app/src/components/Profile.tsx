@@ -5,10 +5,10 @@ import React, { useState } from 'react'
 const Profile: React.FC = () => {
   const [digOpen, setDigOpen] = useState(false) //DialogState
   return (
-    <main className='profile-page'>
-      <section className='relative py-16 bg-blueGray-200 mt-20'>
+    <main title='Profile-Page'>
+      <section className='relative py-10 mt-16'>
         <div className='container mx-auto px-4 max-w-5xl'>
-          <div className='relative flex flex-col min-w-0 break-words bg-gray-900 w-full mb-6 shadow-xl rounded-lg'>
+          <div className='relative flex flex-col min-w-0 break-words bg-gray-900 w-full shadow-xl rounded-lg'>
             <div className='px-6'>
               <div className='flex flex-wrap justify-center'>
                 <div className='hidden lg:block w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center mt-10'>

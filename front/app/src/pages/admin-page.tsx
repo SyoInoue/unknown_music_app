@@ -1,8 +1,9 @@
 import Layout from '../components/Layout'
 import Image from 'next/image'
 import Exit from '../components/Exit'
+import { NextPage } from 'next'
 
-const AdminPage: React.FC = () => {
+const AdminPage: NextPage = () => {
   return (
     <Layout title='Admin-Page'>
       <section className='mt-28 mb-12 bg-gray-900 shadow-xl rounded-xl sm:px-24 px-28 max-w-md sm:max-w-lg mx-auto container'>

@@ -1,10 +1,13 @@
 import Layout from '../components/Layout'
 import Profile from '../components/Profile'
+import { NextPage } from 'next'
 
-const MyPage: React.FC = () => {
+const MyPage: NextPage = () => {
   return (
     <Layout title='My-Page'>
-      <Profile />
+      <div className='container mx-auto'>
+        <Profile />
+      </div>
     </Layout>
   )
 }

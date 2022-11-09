@@ -5,8 +5,9 @@ import Layout from '../../components/Layout'
 import axios from 'axios'
 import { FormEventHandler } from 'react'
 import { useRouter } from 'next/router'
+import { NextPage } from 'next'
 
-const ConfirmPage: React.FC = () => {
+const ConfirmPage: NextPage = () => {
   const input = useRecoilValue(inputState)
   const router = useRouter()
 

@@ -8,8 +8,9 @@ import Music from '../components/icon/Music'
 import Heart from '../components/icon/Heart'
 import Post from '../components/icon/Post'
 import Spacer from '../components/Spacer'
+import { NextPage } from 'next'
 
-const Home: React.FC = () => {
+const Home: NextPage = () => {
   return (
     <Layout title='UnknownMusic'>
       <div className='flex items-center container sm:max-w-7xl flex-col'>
