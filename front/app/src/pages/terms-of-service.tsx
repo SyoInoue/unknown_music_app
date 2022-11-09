@@ -4,9 +4,9 @@ import Service from '../components/Service'
 
 const TermsOfService: React.FC = () => {
   return (
-    <Layout title='Terms of service'>
-      <section className='pt-20 lg:pt-[120px] pb-12 lg:pb-[90px]'>
-        <div className='container'>
+    <Layout title='Terms-Of-Service'>
+      <section className='pt-36 flex'>
+        <div className=''>
           <div className='flex flex-wrap mx-auto sm:max-w-screen-sm max-w-sm sm:mt-10 lg:-mt-3'>
             <div className='w-full px-4 rounded-[20px] shadow-md bg-gray-900 mb-16 sm:-mt-3 mt-5'>
               <div className='text-center mx-auto my-6 lg:mb-6 lg:mt-5 max-w-[510px]'>
@@ -26,7 +26,7 @@ const TermsOfService: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className='flex flex-wrap -mx-4 sm:-mt-5 -mt-8 mx-10 sm:mx-0'>
+          <div className='flex flex-wrap sm:-mt-5 mx-10 sm:mx-0'>
             <Service
               title='第1条（適用）'
               text01='1.本規約は，ユーザーと当サービスとの間の本サービスの利用に関わる一切の関係に適用されるものとします。'

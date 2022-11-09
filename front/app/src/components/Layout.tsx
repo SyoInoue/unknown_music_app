@@ -22,7 +22,7 @@ const Layout: React.FC<MyComponentProps> = ({
           <Header />
         </section>
       </header>
-      <main className='flex flex-1 items-center max-w-screen-sm sm:max-w-screen-xl sm:w-screen flex-col'>
+      <main className='flex flex-1 max-w-screen-sm sm:max-w-screen-xl sm:w-screen'>
         {children}
       </main>
       <footer>

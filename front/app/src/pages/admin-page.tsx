@@ -5,8 +5,8 @@ import Exit from '../components/Exit'
 const AdminPage: React.FC = () => {
   return (
     <Layout title='Admin-Page'>
-      <section className='pt-32 mb-0 pb-14'>
-        <div className='text-center bg-gray-900 shadow-xl sm:max-w-lg pt-1 rounded-xl container'>
+      <section className='mt-28 mb-12 bg-gray-900 shadow-xl rounded-xl sm:px-24 px-28 max-w-md sm:max-w-lg mx-auto container'>
+        <div className='text-center'>
           <div className='mt-10'>
             <p className='font-bold text-white text-xl'>運営者情報</p>
           </div>
