@@ -25,18 +25,13 @@
     "types": ["@emotion/react/types/css-prop"]
   },
   "include": [
-    "src/types/next-env.d.ts",
+    "src/**/*",
     "**/*.ts",
     "**/*.tsx",
     "postcss.config.js",
     "tailwind.config.js",
     "postcss.config.js",
-    "next.config.js",
-    "src/pages/index.tsx",
-    "src/pages/_app.tsx",
-    "src/components/Search.tsx",
-    "src/components/api/Trail.js",
-    "src/components/Header.tsx"
+    "next.config.js"
   ],
   "exclude": ["node_modules"]
 }

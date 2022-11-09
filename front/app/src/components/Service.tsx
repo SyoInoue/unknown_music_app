@@ -10,11 +10,11 @@ const Service: React.FC<ServiceProps> = (props) => {
   const { title, text01, text02, text03, text04 } = props
   return (
     <div className='w-full md:w-1/2 lg:w-1/3 px-4'>
-      <div className='p-10 md:px-7 xl:px-10 rounded-[20px] shadow-md mb-8 bg-gray-900'>
-        <h4 className='font-semibold text-xl text-dark mb-3 underline'>
+      <div className='h-5/6 p-10 md:px-5 rounded-[20px] shadow-md bg-gray-900'>
+        <h4 className='font-semibold text-xl text-dark -mb-16 underline'>
           {title}
         </h4>
-        <p className='text-body-color text-sm'>
+        <p className='text-body-color text-sm mt-20 mb-10'>
           {text01}
           <br></br>
           {text02}

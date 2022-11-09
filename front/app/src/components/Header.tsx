@@ -66,7 +66,7 @@ const Header: React.FC = () => {
                     利用規約
                   </a>
                 </Link>
-                <Link href='/contact-form'>
+                <Link href='/forms/contact-form'>
                   <a className='block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-gray-200 hover:bg-gray-400'>
                     お問い合わせ
                   </a>
@@ -114,7 +114,7 @@ const Header: React.FC = () => {
                     利用規約
                   </a>
                 </Link>
-                <Link href='/contact-form'>
+                <Link href='/forms/contact-form'>
                   <a
                     href='#'
                     className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xs lg:text-sm font-medium'
