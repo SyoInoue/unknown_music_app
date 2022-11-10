@@ -51,6 +51,6 @@ const useArtistParams = (props: ArtistParamsProps) => {
         console.debug('err:', err)
       })
   }, [artistId])
-  return { artistInfo, setArtistInfo }
+  return artistInfo
 }
 export default useArtistParams

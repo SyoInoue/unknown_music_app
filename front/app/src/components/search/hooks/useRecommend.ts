@@ -33,6 +33,6 @@ const useRecommend = (props: RecommendProps) => {
         console.debug('err:', err)
       })
   }, [trackId])
-  return { lookRecommend, setLookRecommend }
+  return lookRecommend
 }
 export default useRecommend

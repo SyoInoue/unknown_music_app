@@ -1,8 +1,5 @@
 import React, { useState } from 'react'
 import Loader from 'react-loader-spinner'
-import ParamsGraph from './api/ParamsGraph'
-import TrackCard from './api/TrackCard'
-import Trail from './api/Trail'
 import ReactHowler from 'react-howler'
 import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
@@ -12,7 +9,9 @@ import Snackbar from '@mui/material/Snackbar'
 import NotInterestedIcon from '@mui/icons-material/NotInterested'
 import VolumeDownIcon from '@mui/icons-material/VolumeDown'
 import VolumeUpIcon from '@mui/icons-material/VolumeUp'
-import { SlideProps } from '@mui/material/Slide' // eslint-disable-line
+import ParamsGraph from './api/ParamsGraph'
+import TrackCard from './api/TrackCard'
+import Trail from './api/Trail'
 import useTrackParams from './hooks/useTrackParams'
 import useQueryTracks from './hooks/useQueryTracks'
 import useArtistParams from './hooks/useArtistParams'
@@ -65,7 +64,7 @@ const Search: React.FC<SearchProps> = (props) => {
   {
     /* 入力された単語から曲を検索 */
   }
-  const { artistInfo, setArtistInfo } = useArtistParams({ token, artistId })
+  const artistInfo = useArtistParams({ token, artistId })
   {
     /* 選ばれた曲のアーティスト情報を取得 */
   }
@@ -73,7 +72,7 @@ const Search: React.FC<SearchProps> = (props) => {
   {
     /* ジャンル数が多いと検索に出ない為、3つまでしか取得しない */
   }
-  const { lookRecommend, setLookRecommend } = useRecommend({
+  const lookRecommend = useRecommend({
     token,
     artistId,
     artistGenres,
@@ -99,11 +98,6 @@ const Search: React.FC<SearchProps> = (props) => {
     setGraphReDisplay('block')
     setTrailOpen(false)
   }
-  //ポップアップトランジション
-  type TransitionProps = Omit<SlideProps, 'direction'>
-  const [transition, setTransition] = useState<
-    React.ComponentType<TransitionProps> | undefined
-  >(undefined)
 
   return (
     <div className='pt-10 max-w-sm sm:max-w-4xl'>
@@ -127,7 +121,6 @@ const Search: React.FC<SearchProps> = (props) => {
             vertical: 'bottom',
             horizontal: 'center',
           }}
-          TransitionComponent={transition}
         >
           <Alert
             severity='success'
