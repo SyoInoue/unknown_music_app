@@ -1,5 +1,7 @@
 {
   "extends": [
+    "next",
+    "next/babel",
     "next/core-web-vitals",
     "plugin:import/recommended",
     "plugin:import/warnings",
