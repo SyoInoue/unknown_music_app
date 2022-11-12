@@ -1,16 +1,17 @@
-import Layout from '../components/Layout'
+import Layout from '../components/common/Layout'
 import Image from 'next/image'
-import Exit from '../components/Exit'
+import Exit from '../components/common/Exit'
+import { NextPage } from 'next'
 
-const AdminPage: React.FC = () => {
+const AdminPage: NextPage = () => {
   return (
     <Layout title='Admin-Page'>
-      <section className='mt-28 mb-12 bg-gray-900 shadow-xl rounded-xl sm:px-24 px-28 max-w-md sm:max-w-lg mx-auto container'>
+      <section className='container mx-auto mt-28 mb-12 max-w-md rounded-xl bg-gray-900 px-28 shadow-xl sm:max-w-lg sm:px-24'>
         <div className='text-center'>
           <div className='mt-10'>
-            <p className='font-bold text-white text-xl'>運営者情報</p>
+            <p className='text-xl font-bold text-white'>運営者情報</p>
           </div>
-          <div className='flex justify-center mt-4'>
+          <div className='mt-4 flex justify-center'>
             <Image
               className='rounded-full'
               src='/images/avatar.jpg'
@@ -22,21 +23,21 @@ const AdminPage: React.FC = () => {
           <div className='mt-4'>
             <p className='font-bold text-white'>名前</p>
             <p className='text-md mt-2 text-gray-200'>Syo</p>
-            <p className='font-bold mt-3 text-white'>自己紹介</p>
+            <p className='mt-3 font-bold text-white'>自己紹介</p>
             <ul className='text-md mt-2 text-gray-200'>
               <li>初めまして。翔と申します。</li>
               <li>たくさんアプリを使って頂いて、</li>
               <li>感想など頂けると嬉しいです。</li>
               <li>よろしくお願い致します！</li>
             </ul>
-            <p className='font-bold mt-3 text-white'>メールアドレス</p>
+            <p className='mt-3 font-bold text-white'>メールアドレス</p>
             <p className='text-md mt-2 text-gray-200'>
               funnyfacee7777@gmail.com
             </p>
-            <p className='font-bold mt-3 text-white'>誕生日</p>
+            <p className='mt-3 font-bold text-white'>誕生日</p>
             <p className='text-md mt-2 text-gray-200'>1993-03-29</p>
           </div>
-          <div className='mt-6 px-32 flex justify-center'>
+          <div className='mt-6 flex justify-center px-32'>
             <div>
               <a
                 href='https://twitter.com/syo_tech_IT'
@@ -44,7 +45,7 @@ const AdminPage: React.FC = () => {
                 rel='noopener noreferrer'
               >
                 <svg
-                  className='w-6 h-6 mx-6 text-white hover:text-gray-300'
+                  className='mx-6 h-6 w-6 text-white hover:text-gray-300'
                   stroke='currentColor'
                   fill='currentColor'
                   viewBox='0 0 512 512'
@@ -61,7 +62,7 @@ const AdminPage: React.FC = () => {
                 rel='noopener noreferrer'
               >
                 <svg
-                  className='w-6 h-6 mx-6 text-white hover:text-gray-300'
+                  className='mx-6 h-6 w-6 text-white hover:text-gray-300'
                   fill='currentColor'
                   viewBox='0 0 256 256'
                   xmlns='http://www.w3.org/2000/svg'
@@ -77,7 +78,7 @@ const AdminPage: React.FC = () => {
                 rel='noopener noreferrer'
               >
                 <svg
-                  className='w-6 h-6 mx-6 text-white hover:text-gray-300'
+                  className='mx-6 h-6 w-6 text-white hover:text-gray-300'
                   fill='currentColor'
                   viewBox='0 0 512 512'
                   xmlns='http://www.w3.org/2000/svg'

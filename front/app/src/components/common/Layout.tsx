@@ -13,7 +13,7 @@ const Layout: React.FC<MyComponentProps> = ({
   title = 'Unknown Music',
 }) => {
   return (
-    <div className='flex justify-center items-center mx-auto flex-col min-h-screen text-white font-mono bg-gradient-to-r from-purple-500 via-pink-600 to-purple-900'>
+    <div className='mx-auto flex min-h-screen flex-col items-center justify-center bg-gradient-to-r from-purple-500 via-pink-600 to-purple-900 font-mono text-white'>
       <Head>
         <title>{title}</title>
       </Head>
@@ -22,7 +22,7 @@ const Layout: React.FC<MyComponentProps> = ({
           <Header />
         </section>
       </header>
-      <main className='flex flex-1 max-w-screen-sm sm:max-w-screen-xl sm:w-screen'>
+      <main className='flex max-w-screen-sm flex-1 sm:w-screen sm:max-w-screen-xl'>
         {children}
       </main>
       <footer>

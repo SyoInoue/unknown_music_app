@@ -1,14 +1,15 @@
 import Link from 'next/link'
-import Layout from '../../components/Layout'
+import Layout from '../../components/common/Layout'
+import { NextPage } from 'next'
 
-const ContactComplete: React.FC = () => {
+const ContactComplete: NextPage = () => {
   setTimeout(() => {
     window.location.href = '/'
   }, 3 * 1000)
   return (
     <Layout title='Contact-Complete'>
-      <section className='flex justify-center items-center mx-auto bg-gray-900 shadow-xl container rounded-xl mt-24 mb-10 max-w-md sm:max-w-xl md:max-w-2xl'>
-        <div className='text-center px-14 sm:px-0'>
+      <section className='container mx-auto mt-24 mb-10 flex max-w-md items-center justify-center rounded-xl bg-gray-900 shadow-xl sm:max-w-xl md:max-w-2xl'>
+        <div className='px-14 text-center sm:px-0'>
           <ul className='mt-14'>
             <li>
               <span>
@@ -25,7 +26,7 @@ const ContactComplete: React.FC = () => {
             </li>
           </ul>
           <div className='mb-14'>
-            <div className='p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center hidden sm:block'>
+            <div className='mt-8 hidden w-full border-t border-gray-200 p-2 pt-8 text-center sm:block'>
               <div className='text-gray-100'>funnyfacee7777@gmail.com</div>
             </div>
           </div>

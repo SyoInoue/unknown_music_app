@@ -5,23 +5,7 @@ import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import { styled } from '@mui/material/styles'
-
-interface ParamsProps {
-  FirstPopularity: number
-  FirstLoudness: number
-  FirstTempo: number
-  FirstValence: number
-  FirstDanceAbility: number
-  FirstEnergy: number
-  RePopularity: number
-  ReLoudness: number
-  ReTempo: number
-  ReValence: number
-  ReDanceAbility: number
-  ReEnergy: number
-  trackName: string
-  reTrackName: string
-}
+import { ParamsProps } from './types/SearchTypeProps'
 
 const myOptions = {
   responsive: true,

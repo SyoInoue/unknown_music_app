@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Track } from 'spotify-types'
+import { RecommendProps } from '../types/SearchTypeProps'
 
-interface RecommendProps {
-  token: string
-  trackId: string
-  artistId: string
-  artistGenres: string
-}
 //選んだ曲のアーティストID、ジャンル、トラックIDからトラックパラメータ取得
 const useRecommend = (props: RecommendProps) => {
   const { token, trackId, artistId, artistGenres } = props
@@ -33,6 +28,6 @@ const useRecommend = (props: RecommendProps) => {
         console.debug('err:', err)
       })
   }, [trackId])
-  return { lookRecommend, setLookRecommend }
+  return lookRecommend
 }
 export default useRecommend
