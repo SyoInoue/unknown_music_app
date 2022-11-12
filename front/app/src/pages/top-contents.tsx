@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Layout from '../components/Layout'
+import Layout from '../components/common/Layout'
 import Search from '../components/search/Search'
 import TextField from '@mui/material/TextField'
 import useCredentials from '../components/search/hooks/useCredentials'
@@ -18,7 +18,7 @@ const TopContents: NextPage = () => {
 
   return (
     <Layout title='Top-Contents'>
-      <div className=' text-purple-900 mt-32 pb-16 container mx-auto max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl'>
+      <div className=' container mx-auto mt-32 max-w-sm pb-16 text-purple-900 sm:max-w-xl md:max-w-2xl lg:max-w-4xl'>
         <form className='w-96 sm:w-full' noValidate onSubmit={handleSubmit}>
           <TextField
             className='bg-white'

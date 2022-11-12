@@ -1,11 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import axios from 'axios'
 import { TuneableTrack } from 'spotify-types'
-
-interface TrackParamsProps {
-  token: string
-  trackId: string
-}
+import { TrackParamsProps } from '../types/SearchTypeProps'
 
 //曲IDからトラックパラメータ取得
 const useTrackParams = (props: TrackParamsProps) => {

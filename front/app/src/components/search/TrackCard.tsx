@@ -10,17 +10,13 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import AddIcon from '@mui/icons-material/Add'
 import Typography from '@mui/material//Typography'
+import { TrackCardProps } from './types/SearchTypeProps'
 
-interface TrackCardProps {
-  artistName: string
-  artworkUrl: string
-  trackName: string
-  previewUrl: string
-  playing: boolean
-  setPlaying: React.Dispatch<React.SetStateAction<boolean>>
-  playSrc: string
-  setPlaySrc: React.Dispatch<React.SetStateAction<string>>
-}
+const theme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+})
 
 const CardStyle = styled(Card)(() => ({
   display: 'flex',
@@ -46,23 +42,22 @@ const CardContentStyle = styled(CardContent)(() => ({
 const TrackCard: React.FC<TrackCardProps> = (props) => {
   //再生ボタンの条件分岐に使用
   let ButtonLooks = false
-
-  //Search.jsにあるReactHowlerの再生管理
-  //この階層に再生エンジンを置くと再生機構を複数持つ為同時再生されてしまう
-
-  //音楽が再生されている場合
-  //Search.js再生エンジンにURLを載せ替える
+  //マウントされた曲とカードの持つプレビュー曲が同じであれば停止ボタン表示
+  if (props.playing === false) {
+    ButtonLooks = false
+  } else if (props.previewUrl === props.playSrc) {
+    ButtonLooks = true
+  }
+  //音楽が再生されている場合,Search.js再生エンジンにURLを載せ替える
   const MountUrl = () => {
     props.setPlaySrc(props.previewUrl)
   }
-  //音楽が再生されていない場合
-  //再生指令をエンジンに送りURLをマウント
+  //音楽が再生されていない場合,再生指令をエンジンに送りURLをマウント
   const PlayAndMount = () => {
     MountUrl()
     props.setPlaying(true)
   }
-  //音楽が再生されていない場合
-  //再生指令をエンジンに送りURLをマウント
+  //音楽が再生されていない場合,再生指令をエンジンに送りURLをマウント
   const handleStartPlaying = () => {
     props.playing ? MountUrl() : PlayAndMount()
   }
@@ -73,18 +68,6 @@ const TrackCard: React.FC<TrackCardProps> = (props) => {
   const handleStartStop = () => {
     props.playing ? handleStopPlaying() : handleStartPlaying()
   }
-  //マウントされた曲とカードの持つプレビュー曲が同じであれば停止ボタン表示
-  if (props.playing === false) {
-    ButtonLooks = false
-  } else if (props.previewUrl === props.playSrc) {
-    ButtonLooks = true
-  }
-  const theme = createTheme({
-    palette: {
-      mode: 'dark',
-    },
-  })
-
   return (
     <>
       {/* ---------アルバムアートワーク--------- */}
@@ -111,7 +94,7 @@ const TrackCard: React.FC<TrackCardProps> = (props) => {
               >
                 {props.trackName}
               </Typography>
-              <div className='flex relative'>
+              <div className='relative flex'>
                 <Typography
                   variant='subtitle1'
                   noWrap
@@ -121,7 +104,7 @@ const TrackCard: React.FC<TrackCardProps> = (props) => {
                 </Typography>
               </div>
               {/* ------------------アイコン類------------------ */}
-              <div className='absolute px-30 -py-22'>
+              <div className='px-30 -py-22 absolute'>
                 {/* ---------後で聞く機能--------- */}
                 <AddIcon
                   style={{ color: '#bc00eb', fontSize: 30, marginRight: 5 }}

@@ -9,9 +9,9 @@ import Snackbar from '@mui/material/Snackbar'
 import NotInterestedIcon from '@mui/icons-material/NotInterested'
 import VolumeDownIcon from '@mui/icons-material/VolumeDown'
 import VolumeUpIcon from '@mui/icons-material/VolumeUp'
-import ParamsGraph from './api/ParamsGraph'
-import TrackCard from './api/TrackCard'
-import Trail from './api/Trail'
+import ParamsGraph from './ParamsGraph'
+import TrackCard from './TrackCard'
+import Trail from './animation/Trail'
 import useTrackParams from './hooks/useTrackParams'
 import useQueryTracks from './hooks/useQueryTracks'
 import useArtistParams from './hooks/useArtistParams'
@@ -22,7 +22,7 @@ import {
   SearchProps,
   SelectedTrackProps,
   SelectedRecommendProps,
-} from './searchTypeProps'
+} from './types/SearchTypeProps'
 
 const Search: React.FC<SearchProps> = (props) => {
   const { token, wordFormData } = props //wordFormDataはQueryTracksで使用。
@@ -32,16 +32,15 @@ const Search: React.FC<SearchProps> = (props) => {
   const [trailOpen, setTrailOpen] = useState(true) //React-Springの挙動制御
   const [snackBarOpen, setSnackBarOpen] = useState(false) //曲を選んだ後のポップアップ
   const [graphReDisplay, setGraphReDisplay] = useState('none') //選び直した曲がRadarChartにセットされる
-  //類似曲のパラメーター
-  const [selectedRecommend, setSelectedRecommend] =
+  const [selectedRecommend, setSelectedRecommend] = //類似曲のパラメーター
     useState<SelectedRecommendProps>({
       reTrackId: '',
       reTrackName: 'none',
       reTrackPopularity: 0,
       reTrackArtwork: '',
     })
-  //曲のパラメーター
   const [selectedTrack, setSelectedTrack] = useState<SelectedTrackProps>({
+    //曲のパラメーター
     trackId: '',
     trackName: '',
     trackArtistId: '',
@@ -52,26 +51,17 @@ const Search: React.FC<SearchProps> = (props) => {
   const trackId = selectedTrack.trackId
   const reTrackId = selectedRecommend.reTrackId
   const artistId = selectedTrack.trackArtistId
+  // 選ばれた曲のパラメータを取得
   const trackInfo = useTrackParams({ token, trackId })
-  {
-    /* 選ばれた曲のパラメータを取得 */
-  }
+  // 選ばれた類似曲のパラメータ取得
   const reTrackInfo = useReTrackParams({ token, reTrackId })
-  {
-    /* 選ばれた類似曲のパラメータ取得 */
-  }
+  // 入力された単語から曲を検索
   const itemResult = useQueryTracks({ token, wordFormData })
-  {
-    /* 入力された単語から曲を検索 */
-  }
+  // 選ばれた曲のアーティスト情報を取得
   const artistInfo = useArtistParams({ token, artistId })
-  {
-    /* 選ばれた曲のアーティスト情報を取得 */
-  }
+  // ジャンル数が多いと検索に出ない為、3つまでしか取得しない
   const artistGenres = artistInfo.genres.slice(0, 3)
-  {
-    /* ジャンル数が多いと検索に出ない為、3つまでしか取得しない */
-  }
+  //選ばれた類似曲のアーティスト情報等取得
   const lookRecommend = useRecommend({
     token,
     artistId,
@@ -100,8 +90,8 @@ const Search: React.FC<SearchProps> = (props) => {
   }
 
   return (
-    <div className='pt-10 max-w-sm sm:max-w-4xl'>
-      <div className='bg-gray-900 text-gray-200 rounded-xl'>
+    <div className='max-w-sm pt-10 sm:max-w-4xl'>
+      <div className='rounded-xl bg-gray-900 text-gray-200'>
         {/* 音楽再生コントローラー */}
         {playSrc !== null && playSrc.length !== 0 && (
           <ReactHowler
@@ -129,7 +119,7 @@ const Search: React.FC<SearchProps> = (props) => {
             action={
               <button
                 onClick={() => handleDataView()}
-                className='bg-green-900 hover:bg-green-800 text-purple-200 font-bold py-2 px-4 text-xs rounded-full'
+                className='rounded-full bg-green-900 py-2 px-4 text-xs font-bold text-purple-200 hover:bg-green-800'
               >
                 open!
               </button>
@@ -142,25 +132,25 @@ const Search: React.FC<SearchProps> = (props) => {
         <Grid container spacing={0}>
           <Grid
             item={true}
-            className='flex text-center justify-center whitespace-nowrap pt-6 pb-6'
+            className='flex justify-center whitespace-nowrap pt-6 pb-6 text-center'
             xs={6}
             sm={3}
           >
             <button
               onClick={() => handleDataView()}
-              className='bg-purple-900 hover:bg-purple-700 text-purple-200 font-bold py-2 px-2 sm:px-3 text-xs rounded-full font-serif'
+              className='rounded-full bg-purple-900 py-2 px-2 font-serif text-xs font-bold text-purple-200 hover:bg-purple-700 sm:px-3'
             >
               レコメンド曲
             </button>
           </Grid>
           <Grid
             item={true}
-            className='flex text-center justify-center whitespace-nowrap pt-6 pb-6'
+            className='flex justify-center whitespace-nowrap pt-6 pb-6 text-center'
             xs={6}
             sm={3}
           >
             <button
-              className='bg-purple-900 hover:bg-purple-700 text-purple-200 font-bold py-2 px-3 text-xs rounded-full font-serif'
+              className='rounded-full bg-purple-900 py-2 px-3 font-serif text-xs font-bold text-purple-200 hover:bg-purple-700'
               onClick={() => handleSearchView()}
             >
               検索結果
@@ -230,7 +220,7 @@ const Search: React.FC<SearchProps> = (props) => {
                 <Grid item={true} xs={12} sm={12}>
                   <Typography
                     variant='h4'
-                    className='text-center text-purple-400 font-serif'
+                    className='text-center font-serif text-purple-400'
                   >
                     RecommendList
                   </Typography>
@@ -268,9 +258,9 @@ const Search: React.FC<SearchProps> = (props) => {
         </Grid>
         <Typography
           variant='subtitle2'
-          className='pl-3 pb-3 pt-3 text-gray-300 text-center block'
+          className='block pl-3 pb-3 pt-3 text-center text-gray-300'
         >
-          <div className='text-left inline-block'>
+          <div className='inline-block text-left'>
             <br />
             １）曲をクリックすると解析が始まります。
             <br />
@@ -294,7 +284,7 @@ const Search: React.FC<SearchProps> = (props) => {
           <>
             <Typography
               variant='h4'
-              className='pl-3 text-center text-purple-400 font-serif'
+              className='pl-3 text-center font-serif text-purple-400'
             >
               TrackList
             </Typography>

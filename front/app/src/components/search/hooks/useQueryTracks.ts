@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Track } from 'spotify-types'
-
-interface QueryTracksProps {
-  token: string
-  wordFormData: string
-}
+import { QueryTracksProps } from '../types/SearchTypeProps'
 
 //曲名単語検索
 const useQueryTracks = (props: QueryTracksProps) => {

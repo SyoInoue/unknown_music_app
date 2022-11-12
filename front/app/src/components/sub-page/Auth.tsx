@@ -4,7 +4,7 @@ import { useState } from 'react' //ReactHooksのuseState(コンポーネント�
 import { useRouter } from 'next/router' //next.jsからuseRouter
 import Cookie from 'universal-cookie' //universal-cookieからCookie
 import Image from 'next/image'
-import DialogAlerts from './DialogAlerts'
+import DialogAlerts from '../common/DialogAlerts'
 
 //取得したJWTトークンをCookieに格納する。
 const cookie = new Cookie()
@@ -81,7 +81,7 @@ const Auth: React.FC = () => {
   }
 
   return (
-    <div className='space-y-8 mt-1'>
+    <div className='mt-1 space-y-8'>
       <div>
         <div className='mx-auto h-10 w-auto'>
           <Image
@@ -96,16 +96,16 @@ const Auth: React.FC = () => {
           {isLogin ? 'Login' : 'Sign up'}
         </h2>
       </div>
-      <form className='mt-8 space-y-6 sm:mx-0 -mx-14' onSubmit={authUser}>
+      <form className='-mx-14 mt-8 space-y-6 sm:mx-0' onSubmit={authUser}>
         <input type='hidden' name='remember' value='true' />
-        <div className='rounded-md shadow-sm -space-y-px'>
+        <div className='-space-y-px rounded-md shadow-sm'>
           <div>
             <input
               id='email'
               type='email'
               autoComplete='email'
               required
-              className='appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 text-xs sm:text-sm'
+              className='relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-3 text-xs text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm'
               placeholder='email address'
               value={email}
               onChange={(e) => {
@@ -120,7 +120,7 @@ const Auth: React.FC = () => {
               type='password'
               autoComplete='current-password'
               required
-              className='appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 text-xs sm:text-sm'
+              className='relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-3 text-xs text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm'
               placeholder='Password'
               value={password}
               onChange={(e) => {
@@ -144,10 +144,10 @@ const Auth: React.FC = () => {
           <DialogAlerts open={digOpen} close={() => setDigOpen(false)} />
           <button
             type='submit'
-            className='group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
+            className='group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
             onClick={() => setDigOpen(true)}
           >
-            <span className='absolute left-0 inset-y-0 flex items-center pl-3'>
+            <span className='absolute inset-y-0 left-0 flex items-center pl-3'>
               <svg
                 className='h-5 w-5 text-indigo-500 group-hover:text-indigo-400'
                 xmlns='http://www.w3.org/2000/svg'

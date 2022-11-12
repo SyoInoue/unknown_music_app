@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { useRecoilValue } from 'recoil'
 import { inputState } from '../../components/forms/inputAtom'
-import Layout from '../../components/Layout'
+import Layout from '../../components/common/Layout'
 import axios from 'axios'
 import { FormEventHandler } from 'react'
 import { useRouter } from 'next/router'
@@ -30,10 +30,10 @@ const ConfirmPage: NextPage = () => {
 
   return (
     <Layout title='Confirm-Page'>
-      <section className='flex justify-center items-center mx-auto bg-gray-900 shadow-xl container rounded-xl mt-24 mb-10 max-w-md sm:max-w-xl md:max-w-2xl'>
-        <div className='text-center px-14 sm:px-0'>
+      <section className='container mx-auto mt-24 mb-10 flex max-w-md items-center justify-center rounded-xl bg-gray-900 shadow-xl sm:max-w-xl md:max-w-2xl'>
+        <div className='px-14 text-center sm:px-0'>
           <form onSubmit={onSubmit}>
-            <ul className='mt-14 px-10 max-w-md mx-auto'>
+            <ul className='mx-auto mt-14 max-w-md px-10'>
               <li>
                 <span>
                   <div>● お名前</div>
@@ -53,12 +53,12 @@ const ConfirmPage: NextPage = () => {
                 </span>
               </li>
             </ul>
-            <div className='flex my-10'>
-              <div className='flex mr-14 mx-auto text-gray-100 bg-indigo-700 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg'>
+            <div className='my-10 flex'>
+              <div className='mx-auto mr-14 flex rounded border-0 bg-indigo-700 py-2 px-8 text-lg text-gray-100 hover:bg-indigo-600 focus:outline-none'>
                 <Link href='./contact-form'>修正する</Link>
               </div>
               <button
-                className='flex mx-auto text-gray-100 bg-indigo-700 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg'
+                className='mx-auto flex rounded border-0 bg-indigo-700 py-2 px-8 text-lg text-gray-100 hover:bg-indigo-600 focus:outline-none'
                 type='submit'
               >
                 送信
@@ -66,7 +66,7 @@ const ConfirmPage: NextPage = () => {
             </div>
           </form>
           <div className='mb-14'>
-            <div className='p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center hidden sm:block'>
+            <div className='mt-8 hidden w-full border-t border-gray-200 p-2 pt-8 text-center sm:block'>
               <div className='text-gray-100'>funnyfacee7777@gmail.com</div>
             </div>
           </div>

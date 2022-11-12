@@ -22,11 +22,11 @@ const Header: React.FC = () => {
   }
 
   return (
-    <nav className='left-0 block fixed w-full bg-gray-900 z-50 bg-opacity-95 shadow-2xl'>
-      <div className='mx-auto xl:mx-44 md:mx-20'>
-        <div className='relative flex items-center justify-between h-16'>
+    <nav className='fixed left-0 z-50 block w-full bg-gray-900 bg-opacity-95 shadow-2xl'>
+      <div className='mx-auto md:mx-20 xl:mx-44'>
+        <div className='relative flex h-16 items-center justify-between'>
           {/* ハンバーガーメニュー */}
-          <div className='ml-6 flex items-center flex-row flex-col sm:hidden block'>
+          <div className='ml-6 block flex flex-row flex-col items-center sm:hidden'>
             <button
               type='button'
               className='bg-opacity-0 p-2 hover:opacity-70'
@@ -35,7 +35,7 @@ const Header: React.FC = () => {
             >
               <span className='sr-only'>Open main menu</span>
               <svg
-                className='w-6 h-6'
+                className='h-6 w-6'
                 fill='none'
                 stroke='currentColor'
                 viewBox='0 0 24 24'
@@ -50,24 +50,24 @@ const Header: React.FC = () => {
               </svg>
             </button>
             {thisOpen ? ( //こっから下はdiv要素が一つではないとうまく動かない
-              <div className='absolute inset-x-0 w-48 block sm:hidden rounded-lg px-2 pt-2 pb-3 space-y-1 ml-6 mt-14 shadow-md bg-gray-900 bg-opacity-95'>
+              <div className='absolute inset-x-0 ml-6 mt-14 block w-48 space-y-1 rounded-lg bg-gray-900 bg-opacity-95 px-2 pt-2 pb-3 shadow-md sm:hidden'>
                 <Link href='/top-contents'>
-                  <a className='block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-gray-200 hover:bg-gray-400'>
+                  <a className='block rounded-md px-3 py-2 text-base font-medium text-gray-200 hover:bg-gray-400 hover:text-gray-200'>
                     メインコンテンツ
                   </a>
                 </Link>
                 <Link href='/admin-page'>
-                  <a className='block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-gray-200 hover:bg-gray-400'>
+                  <a className='block rounded-md px-3 py-2 text-base font-medium text-gray-200 hover:bg-gray-400 hover:text-gray-200'>
                     運営者情報
                   </a>
                 </Link>
                 <Link href='/terms-of-service'>
-                  <a className='block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-gray-200 hover:bg-gray-400'>
+                  <a className='block rounded-md px-3 py-2 text-base font-medium text-gray-200 hover:bg-gray-400 hover:text-gray-200'>
                     利用規約
                   </a>
                 </Link>
                 <Link href='/forms/contact-form'>
-                  <a className='block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-gray-200 hover:bg-gray-400'>
+                  <a className='block rounded-md px-3 py-2 text-base font-medium text-gray-200 hover:bg-gray-400 hover:text-gray-200'>
                     お問い合わせ
                   </a>
                 </Link>
@@ -75,15 +75,15 @@ const Header: React.FC = () => {
             ) : undefined}
           </div>
           {/* PC用メニュー */}
-          <div className='flex-1 flex items-center justify-center sm:items-stretch sm:justify-start'>
-            <div className='flex-shrink-0 flex items-center hover:opacity-70 sm:mr-0 mr-16'>
-              <div className='flex items-center flex-grow flex-shrink-0 lg:flex-grow-0'>
-                <div className='flex items-center justify-between w-full md:w-auto'>
+          <div className='flex flex-1 items-center justify-center sm:items-stretch sm:justify-start'>
+            <div className='mr-16 flex flex-shrink-0 items-center hover:opacity-70 sm:mr-0'>
+              <div className='flex flex-shrink-0 flex-grow items-center lg:flex-grow-0'>
+                <div className='flex w-full items-center justify-between md:w-auto'>
                   <span className='sr-only'>Workflow</span>
                 </div>
               </div>
               <Link href='/'>
-                <div className='sm:ml-10 block h-7 w-auto'>
+                <div className='block h-7 w-auto sm:ml-10'>
                   <Image
                     src='/images/logo.png'
                     alt='Workflow'
@@ -94,30 +94,30 @@ const Header: React.FC = () => {
                 </div>
               </Link>
             </div>
-            <div className='hidden sm:block sm:ml-6'>
+            <div className='hidden sm:ml-6 sm:block'>
               <div className='flex space-x-4'>
                 <Link href='/top-contents'>
                   <a
-                    className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xs lg:text-sm font-medium'
+                    className='rounded-md px-3 py-2 text-xs font-medium text-gray-300 hover:bg-gray-700 hover:text-white lg:text-sm'
                     aria-current='page'
                   >
                     メインコンテンツ
                   </a>
                 </Link>
                 <Link href='/admin-page'>
-                  <a className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xs lg:text-sm font-medium'>
+                  <a className='rounded-md px-3 py-2 text-xs font-medium text-gray-300 hover:bg-gray-700 hover:text-white lg:text-sm'>
                     運営者情報
                   </a>
                 </Link>
                 <Link href='/terms-of-service'>
-                  <a className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xs lg:text-sm font-medium'>
+                  <a className='rounded-md px-3 py-2 text-xs font-medium text-gray-300 hover:bg-gray-700 hover:text-white lg:text-sm'>
                     利用規約
                   </a>
                 </Link>
                 <Link href='/forms/contact-form'>
                   <a
                     href='#'
-                    className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xs lg:text-sm font-medium'
+                    className='rounded-md px-3 py-2 text-xs font-medium text-gray-300 hover:bg-gray-700 hover:text-white lg:text-sm'
                   >
                     お問い合わせ
                   </a>
@@ -127,10 +127,10 @@ const Header: React.FC = () => {
           </div>
           {/* ユーザーメニュー*/}
           <div className='absolute inset-y-0 right-0 flex items-center sm:static sm:inset-auto sm:ml-6 sm:pr-1'>
-            <div className='ml-3 relative z-30 md:mr-0 mr-10'>
+            <div className='relative z-30 ml-3 mr-10 md:mr-0'>
               <button
                 type='button'
-                className='flex text-sm rounded-full text-gray-200 focus:outline-none hover:opacity-70'
+                className='flex rounded-full text-sm text-gray-200 hover:opacity-70 focus:outline-none'
                 id='user-menu'
                 aria-expanded='false'
                 aria-haspopup='true'
@@ -138,7 +138,7 @@ const Header: React.FC = () => {
               >
                 <span className='sr-only'>Open user menu</span>
                 <svg
-                  className='w-6 h-6'
+                  className='h-6 w-6'
                   fill='none'
                   stroke='currentColor'
                   viewBox='0 0 24 24'
@@ -153,10 +153,10 @@ const Header: React.FC = () => {
                 </svg>
               </button>
               {isOpen ? (
-                <div className='origin-top-right px-2 absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-gray-100 focus:outline-none'>
+                <div className='absolute right-0 mt-2 w-48 origin-top-right rounded-md bg-gray-100 px-2 py-1 shadow-lg focus:outline-none'>
                   <Link href='/my-page'>
                     <a
-                      className='block px-3 py-2 text-sm rounded-md text-gray-900 hover:bg-gray-300'
+                      className='block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-300'
                       role='menuitem'
                     >
                       マイページ
@@ -164,7 +164,7 @@ const Header: React.FC = () => {
                   </Link>
                   <button
                     onClick={() => setDigOpen(true)}
-                    className='block px-3 py-2 text-sm rounded-md text-gray-900 hover:bg-gray-300'
+                    className='block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-300'
                     role='menuitem'
                   >
                     プロフィール編集
@@ -175,7 +175,7 @@ const Header: React.FC = () => {
                   />
                   <button
                     onClick={() => setDigOpen(true)}
-                    className='block px-3 py-2 text-sm rounded-md text-gray-900 hover:bg-gray-300'
+                    className='block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-300'
                     role='menuitem'
                   >
                     ログアウト

@@ -1,23 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-
-interface ArtistParamsProps {
-  token: string
-  artistId: string
-}
-interface ArtistInfoProps {
-  external_urls: object
-  followers: object
-  genres: string
-  href: string
-  id: string
-  images: object
-  name: string
-  popularity: number
-  type: string
-  uri: string
-  length?: number
-}
+import { ArtistInfoProps, ArtistParamsProps } from '../types/SearchTypeProps'
 
 //受け取ったアーティストIDから
 const useArtistParams = (props: ArtistParamsProps) => {
