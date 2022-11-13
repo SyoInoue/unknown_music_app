@@ -2,11 +2,11 @@ import Link from 'next/link'
 
 const Exit: React.FC = () => {
   return (
-    <div className='flex justify-center'>
+    <div className='mx-auto flex justify-center'>
       <Link href='/'>
-        <div className='flex cursor-pointer my-12 hover:text-gray-300'>
+        <div className='my-12 flex cursor-pointer hover:text-gray-300'>
           <svg
-            className='w-6 h-6 mr-6'
+            className='mr-6 h-6 w-6'
             fill='none'
             stroke='currentColor'
             viewBox='0 0 24 24'
@@ -19,7 +19,7 @@ const Exit: React.FC = () => {
               d='M11 19l-7-7 7-7m8 14l-7-7 7-7'
             />
           </svg>
-          <span>Back to main page</span>
+          <span className='nowrap'>Back to main page</span>
         </div>
       </Link>
     </div>

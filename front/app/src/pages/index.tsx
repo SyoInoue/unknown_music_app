@@ -18,7 +18,7 @@ const Home: NextPage = () => {
           <section id='TopContainer'>
             <TopContainer />
           </section>
-          <section id='container'>
+          <section className='mb-6' id='container'>
             <Container container={ContainerObject} />
             <Spacer />
           </section>

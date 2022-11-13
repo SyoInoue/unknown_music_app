@@ -1,11 +1,7 @@
 import Head from 'next/head'
 import Header from './Header'
 import Footer from './Footer'
-
-type MyComponentProps = {
-  children: React.ReactNode
-  title: string
-}
+import { MyComponentProps } from './types/CommonTypeProps'
 
 //Layoutコンポーネントの作成。全体のlayout。引数にchildren, title
 const Layout: React.FC<MyComponentProps> = ({

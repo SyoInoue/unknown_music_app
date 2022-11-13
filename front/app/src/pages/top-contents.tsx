@@ -18,8 +18,12 @@ const TopContents: NextPage = () => {
 
   return (
     <Layout title='Top-Contents'>
-      <div className=' container mx-auto mt-32 max-w-sm pb-16 text-purple-900 sm:max-w-xl md:max-w-2xl lg:max-w-4xl'>
-        <form className='w-96 sm:w-full' noValidate onSubmit={handleSubmit}>
+      <div className=' container mx-auto mt-32 pb-16 text-purple-900 sm:max-w-xl md:max-w-2xl lg:max-w-4xl'>
+        <form
+          className='mx-auto w-[350px] sm:w-full'
+          noValidate
+          onSubmit={handleSubmit}
+        >
           <TextField
             className='bg-white'
             id='standard-basic'
