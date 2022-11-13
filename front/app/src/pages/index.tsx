@@ -3,7 +3,6 @@ import TopWrapper from '../components/top-page/TopWrapper'
 import TopContainer from '../components/top-page/TopContainer'
 import Container from '../components/top-page/Container'
 import Gallery from '../components/top-page/Gallery'
-import Spacer from '../components/common/Spacer'
 import { NextPage } from 'next'
 import ContainerObject from '../object/container-object'
 
@@ -20,7 +19,6 @@ const Home: NextPage = () => {
           </section>
           <section className='mb-6' id='container'>
             <Container container={ContainerObject} />
-            <Spacer />
           </section>
         </div>
         <div className='container'>
