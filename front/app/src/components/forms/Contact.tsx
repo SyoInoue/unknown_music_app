@@ -1,7 +1,7 @@
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
-import InputProps from './inputProps'
+import InputTypeProps from './types/InputTypeProps'
 import { useRecoilState } from 'recoil'
 import { inputState } from './inputAtom'
 import Router from 'next/router'
@@ -27,7 +27,7 @@ const Contact: React.FC = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<InputProps>({
+  } = useForm<InputTypeProps>({
     resolver: yupResolver(schema),
     defaultValues: {
       name: input.name,
@@ -36,7 +36,7 @@ const Contact: React.FC = () => {
     },
   })
   //フォーム送信処理
-  const onSubmit: SubmitHandler<InputProps> = (data) => {
+  const onSubmit: SubmitHandler<InputTypeProps> = (data) => {
     console.debug(data),
       setInput((currentInput) => ({
         ...currentInput,
@@ -50,33 +50,33 @@ const Contact: React.FC = () => {
   }
 
   return (
-    <section className='text-gray-100 body-font relative mt-10'>
-      <div className='flex flex-col text-center w-full mb-8'>
-        <h1 className='text-xl mb-4 text-gray-100 font-bold'>お問い合わせ</h1>
-        <p className='leading-relaxed text-base mx-10 md:mx-0'>
+    <section className='body-font relative mt-10 text-gray-100'>
+      <div className='mb-8 flex w-full flex-col text-center'>
+        <h1 className='mb-4 text-xl font-bold text-gray-100'>お問い合わせ</h1>
+        <p className='mx-10 text-base leading-relaxed md:mx-0'>
           お仕事の依頼、バグの修正、アプリの感想等
           <br />
           なんでもおまちしております。
         </p>
       </div>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className='w-3/4 mx-auto'>
-          <div className='flex flex-wrap -m-2'>
-            <div className='p-2 w-1/2'>
+        <div className='mx-auto w-3/4'>
+          <div className='-m-2 flex flex-wrap'>
+            <div className='w-1/2 p-2'>
               <div className='relative'>
                 <label
                   htmlFor='name'
-                  className={`leading-7 text-sm ${
+                  className={`text-sm leading-7 ${
                     errors.name ? 'text-red-500' : 'text-gray-100'
                   }`}
                 >
                   ● お名前
                 </label>
                 <input
-                  className={`w-full bg-gray-200 rounded focus:bg-white text-base outline-none text-black py-1 px-3 leading-8 ${
+                  className={`w-full rounded bg-gray-200 py-1 px-3 text-base leading-8 text-black outline-none focus:bg-white ${
                     errors.name
-                      ? 'ring-red-500 ring-2'
-                      : 'focus:ring-indigo-700 focus:ring-4'
+                      ? 'ring-2 ring-red-500'
+                      : 'focus:ring-4 focus:ring-indigo-700'
                   }`}
                   type='text'
                   {...register('name')}
@@ -86,21 +86,21 @@ const Contact: React.FC = () => {
                 {errors.name?.message}
               </p>
             </div>
-            <div className='p-2 w-1/2'>
+            <div className='w-1/2 p-2'>
               <div className='relative'>
                 <label
                   htmlFor='email'
-                  className={`leading-7 text-sm ${
+                  className={`text-sm leading-7 ${
                     errors.email ? 'text-red-500' : 'text-gray-100'
                   }`}
                 >
                   ● メールアドレス
                 </label>
                 <input
-                  className={`w-full bg-gray-200 rounded focus:bg-white text-base outline-none text-black py-1 px-3 leading-8 ${
+                  className={`w-full rounded bg-gray-200 py-1 px-3 text-base leading-8 text-black outline-none focus:bg-white ${
                     errors.email
-                      ? 'ring-red-500 ring-2'
-                      : 'focus:ring-indigo-700 focus:ring-4'
+                      ? 'ring-2 ring-red-500'
+                      : 'focus:ring-4 focus:ring-indigo-700'
                   }`}
                   type='email'
                   {...register('email')}
@@ -110,21 +110,21 @@ const Contact: React.FC = () => {
                 </p>
               </div>
             </div>
-            <div className='p-2 w-full'>
+            <div className='w-full p-2'>
               <div className='relative'>
                 <label
                   htmlFor='message'
-                  className={`leading-7 text-sm ${
+                  className={`text-sm leading-7 ${
                     errors.text ? 'text-red-500' : 'text-gray-100'
                   }`}
                 >
                   ● 本文
                 </label>
                 <textarea
-                  className={`w-full bg-gray-200 rounded focus:bg-white text-base outline-none text-black py-1 px-3 leading-6 h-60 ${
+                  className={`h-60 w-full rounded bg-gray-200 py-1 px-3 text-base leading-6 text-black outline-none focus:bg-white ${
                     errors.text
-                      ? 'ring-red-500 ring-2'
-                      : 'focus:ring-indigo-700 focus:ring-4'
+                      ? 'ring-2 ring-red-500'
+                      : 'focus:ring-4 focus:ring-indigo-700'
                   }`}
                   id='text'
                   {...register('text')}
@@ -134,15 +134,15 @@ const Contact: React.FC = () => {
                 </p>
               </div>
             </div>
-            <div className='p-2 w-full'>
+            <div className='w-full p-2'>
               <button
-                className='flex mx-auto text-gray-100 bg-indigo-700 border-0 py-4 px-10 focus:outline-none hover:bg-indigo-600 rounded text-lg'
+                className='mx-auto flex rounded border-0 bg-indigo-700 py-4 px-10 text-lg text-gray-100 hover:bg-indigo-600 focus:outline-none'
                 type='submit'
               >
                 <div className='text-sm'>入力内容のご確認</div>
               </button>
             </div>
-            <div className='p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center hidden sm:block'>
+            <div className='mt-8 hidden w-full border-t border-gray-200 p-2 pt-8 text-center sm:block'>
               <div className='text-gray-100'>funnyfacee7777@gmail.com</div>
             </div>
           </div>

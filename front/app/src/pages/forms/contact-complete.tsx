@@ -8,7 +8,7 @@ const ContactComplete: NextPage = () => {
   }, 3 * 1000)
   return (
     <Layout title='Contact-Complete'>
-      <section className='container mx-auto mt-24 mb-10 flex max-w-md items-center justify-center rounded-xl bg-gray-900 shadow-xl sm:max-w-xl md:max-w-2xl'>
+      <section className='container mx-auto mt-24 mb-10 flex w-[350px] max-w-md items-center justify-center rounded-xl bg-gray-900 shadow-xl sm:w-full sm:max-w-xl md:max-w-2xl'>
         <div className='px-14 text-center sm:px-0'>
           <ul className='mt-14'>
             <li>

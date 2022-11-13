@@ -2,11 +2,11 @@ import Image from 'next/image'
 
 const TopContainer: React.FC = () => {
   return (
-    <section className='body-font mx-20 rounded-t-xl bg-gray-900 pb-10 text-gray-200 sm:mt-0 sm:px-6 sm:pb-16 md:pb-10'>
+    <section className='body-font mx-3 rounded-t-xl bg-gray-900 pb-10 text-gray-200 sm:mx-20 sm:mt-0 sm:px-6 sm:pb-16 md:pb-10'>
       <h1 className='pt-20 text-center text-3xl text-indigo-500 lg:text-4xl'>
         Unknown Musicとは
       </h1>
-      <div className='container mx-auto  px-5'>
+      <div className='container mx-auto px-5'>
         <div className='mx-auto w-full text-center lg:w-3/4 xl:w-1/2'>
           <div className='mb-6 mt-6 inline-block text-gray-400'>
             <Image

@@ -67,7 +67,7 @@ const ParamsGraph: React.FC<ParamsProps> = (props) => {
   const ReShTempo = ReTempo * 0.005
 
   const data = {
-    labels: ['人気度', 'テンポ', '激しさ', '明るさ', '踊りやすさ', 'エナジー'],
+    labels: ['人気度', 'テンポ', '激しさ', '明るさ', 'ダンス', 'パワー'],
     datasets: [
       {
         label: reTrackName,

@@ -2,10 +2,13 @@ import { ContainerItemProps, ContainerProps } from './types/TopPageTypeProps'
 
 const Container: React.FC<ContainerProps> = ({ container }) => {
   return (
-    <section className='body-font mx-20 bg-gray-900 text-gray-200 sm:mt-0 sm:px-6 sm:pb-0 md:pb-0'>
-      <div className='container mx-auto flex flex-wrap items-center px-5'>
-        {container.map((container: ContainerItemProps) => (
-          <div className='relative mx-auto flex w-11/12 pt-8 pb-20 sm:items-center md:w-2/3'>
+    <section className='body-font mx-3 bg-gray-900 text-gray-200 sm:mx-20 sm:mt-0 sm:px-6 sm:pb-0 md:pb-0'>
+      <div className='container mx-auto flex flex-wrap items-center'>
+        {container.map((container: ContainerItemProps, index) => (
+          <div
+            key={index}
+            className='relative mx-auto flex w-11/12 pt-8 pb-20 sm:items-center md:w-2/3'
+          >
             <div className='absolute inset-0 flex h-full w-6 items-center justify-center sm:w-6'>
               <div className='pointer-events-none h-full w-1 bg-gray-200'></div>
             </div>

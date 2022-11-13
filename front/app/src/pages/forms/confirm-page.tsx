@@ -30,8 +30,8 @@ const ConfirmPage: NextPage = () => {
 
   return (
     <Layout title='Confirm-Page'>
-      <section className='container mx-auto mt-24 mb-10 flex max-w-md items-center justify-center rounded-xl bg-gray-900 shadow-xl sm:max-w-xl md:max-w-2xl'>
-        <div className='px-14 text-center sm:px-0'>
+      <section className='container mx-auto mt-24 mb-10 flex w-[350px] max-w-md items-center justify-center rounded-xl bg-gray-900 shadow-xl sm:w-full sm:max-w-xl md:max-w-2xl'>
+        <div className='px-7 text-center sm:px-0'>
           <form onSubmit={onSubmit}>
             <ul className='mx-auto mt-14 max-w-md px-10'>
               <li>

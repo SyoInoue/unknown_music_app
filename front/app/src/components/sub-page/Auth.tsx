@@ -81,9 +81,9 @@ const Auth: React.FC = () => {
   }
 
   return (
-    <div className='mt-1 space-y-8'>
+    <div className='my-0 mt-20 sm:mt-0'>
       <div>
-        <div className='mx-auto h-10 w-auto'>
+        <div className='flex items-center justify-center'>
           <Image
             src='/images/logo.png'
             alt='Workflow'
@@ -92,11 +92,11 @@ const Auth: React.FC = () => {
             objectFit='contain'
           />
         </div>
-        <h2 className='mt-10 text-center text-3xl font-extrabold text-white'>
-          {isLogin ? 'Login' : 'Sign up'}
+        <h2 className='mt-8 text-center text-3xl font-extrabold text-white'>
+          {isLogin ? 'Login' : 'Sign Up'}
         </h2>
       </div>
-      <form className='-mx-14 mt-8 space-y-6 sm:mx-0' onSubmit={authUser}>
+      <form className='mx-10 mt-8 space-y-6 sm:mx-0' onSubmit={authUser}>
         <input type='hidden' name='remember' value='true' />
         <div className='-space-y-px rounded-md shadow-sm'>
           <div>

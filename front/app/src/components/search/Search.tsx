@@ -90,7 +90,7 @@ const Search: React.FC<SearchProps> = (props) => {
   }
 
   return (
-    <div className='max-w-sm pt-10 sm:max-w-4xl'>
+    <div className='w-[350px] pt-10 sm:w-full sm:max-w-4xl'>
       <div className='rounded-xl bg-gray-900 text-gray-200'>
         {/* 音楽再生コントローラー */}
         {playSrc !== null && playSrc.length !== 0 && (
