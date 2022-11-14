@@ -9,6 +9,7 @@ import Snackbar from '@mui/material/Snackbar'
 import NotInterestedIcon from '@mui/icons-material/NotInterested'
 import VolumeDownIcon from '@mui/icons-material/VolumeDown'
 import VolumeUpIcon from '@mui/icons-material/VolumeUp'
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline'
 import ParamsGraph from './ParamsGraph'
 import TrackCard from './TrackCard'
 import Trail from './animation/Trail'
@@ -262,11 +263,15 @@ const Search: React.FC<SearchProps> = (props) => {
         >
           <div className='inline-block text-left'>
             <br />
-            １）曲をクリックすると解析が始まります。
+            １）
+            <PlayCircleOutlineIcon style={{ fontSize: 15 }} />
+            をクリックすると解析が始まります。
             <br />
             ２）再生/停止はアートワークでも操作可能です。
             <br />
-            ３）
+            ３）スマホの方はマナーモードをオフにしてください。
+            <br />
+            ４）
             <NotInterestedIcon style={{ fontSize: 15 }} />
             は権利元によりプレビューが許可されていません。
           </div>

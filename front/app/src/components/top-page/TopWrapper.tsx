@@ -70,12 +70,11 @@ const TopWrapper: React.FC = () => {
                   </Link>
                 </div>
                 <div className='mt-3 sm:mt-0 sm:ml-3'>
-                  <a
-                    href='#'
-                    className='flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-100 px-8 py-3 text-base text-indigo-600 hover:bg-indigo-200 sm:text-xs md:text-sm lg:ml-6 lg:px-1 lg:px-5 xl:ml-1 xl:py-4 xl:px-10'
-                  >
-                    ゲストユーザーで利用
-                  </a>
+                  <Link href='/top-contents'>
+                    <a className='flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-100 px-8 py-3 text-base text-indigo-600 hover:bg-indigo-200 sm:text-xs md:text-sm lg:ml-6 lg:px-1 lg:px-5 xl:ml-1 xl:py-4 xl:px-10'>
+                      ゲストユーザーで利用
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -84,7 +83,7 @@ const TopWrapper: React.FC = () => {
       </div>
       <div className='absolute lg:inset-y-0 lg:right-0 lg:w-1/2'>
         <Image
-          src='/images/main.jpg'
+          src='/images/main.png'
           alt='Main Photo'
           className='h-80 w-full object-cover sm:h-80 md:h-96 lg:h-full lg:w-full'
           layout='fill'

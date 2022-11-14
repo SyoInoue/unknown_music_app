@@ -9,7 +9,7 @@ const Gallery: React.FC = () => {
           <div className='relative mb-4 flex w-full flex-wrap py-32 px-10'>
             <Image
               alt='gallery'
-              src='/images/signup_image.jpeg'
+              src='/images/signup_image.png'
               className='absolute inset-0 block h-full w-full rounded-xl object-cover object-center shadow-2xl'
               layout='fill'
               objectFit='contain'
@@ -45,7 +45,7 @@ const Gallery: React.FC = () => {
                 <Image
                   alt='gallery'
                   className='absolute inset-0 h-full w-full rounded-xl object-cover object-center shadow-2xl md:block'
-                  src='/images/locate_image.jpeg'
+                  src='/images/locate_image.png'
                   layout='fill'
                   objectFit='contain'
                 />
@@ -82,7 +82,7 @@ const Gallery: React.FC = () => {
                 <Image
                   alt='gallery'
                   className='absolute inset-0 h-full w-full rounded-xl object-cover object-center shadow-2xl md:block'
-                  src='/images/post_image.jpeg'
+                  src='/images/post_image.png'
                   layout='fill'
                   objectFit='contain'
                 />
